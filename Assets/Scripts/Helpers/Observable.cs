@@ -13,7 +13,7 @@ public class Observable<T>
         }
     }
 
-    private UnityEvent<T> onValueChanged = new();
+    private readonly UnityEvent<T> onValueChanged = new();
 
     public Observable(T value)
     {
