@@ -9,6 +9,7 @@ public class Observable<T>
         set
         {
             _value = value;
+            onValueChanged.Invoke(value);
         }
     }
 
