@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float regularSpeed = 3.5f;
     public float chaseSpeed = 5f;
     bool stoppedByFirefly = false;
+    float timeToStopChase = 5f;
+    float currentTimer = 0f;
     Light light;
 
     private void Start() {
@@ -42,6 +44,14 @@ public class Enemy : MonoBehaviour
         {
             light.color = Color.red;
             agent.speed = chaseSpeed;
+            agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
+            currentTimer = 0f;
+        }
+        else if(currentTimer < timeToStopChase)
+        {
+            light.color = Color.red;
+            agent.speed = chaseSpeed;
+            currentTimer += Time.deltaTime;
             agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
         }
         else
