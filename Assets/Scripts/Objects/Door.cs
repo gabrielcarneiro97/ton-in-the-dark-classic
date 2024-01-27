@@ -11,11 +11,11 @@ public class Door : MonoBehaviour , ISwitchable
     {
         if(value)
         {
-            Close();
+            Open();
         }
         else
         {
-            Open();
+            Close();
         }
     }
 
