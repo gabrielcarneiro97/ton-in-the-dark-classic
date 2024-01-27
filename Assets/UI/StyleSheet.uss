@@ -1,0 +1,24 @@
+VisualElement {
+  -unity-font-definition: url("project://database/Assets/Fonts/Wonderland.otf?fileID=12800000&amp;guid=f69e102f6f9b44b0c8201e6242dea945&amp;type=3#Wonderland");
+}
+
+.btn {
+  background-image: none;
+  width: 50%;
+  background-color: rgba(103, 154, 217, 0.53);
+  -unity-font-definition: url("project://database/Assets/Fonts/Wonderland.otf?fileID=12800000&amp;guid=f69e102f6f9b44b0c8201e6242dea945&amp;type=3#Wonderland");
+  font-size: 20px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  -unity-background-scale-mode: stretch-to-fill;
+  -unity-slice-top: 0;
+  -unity-background-image-tint-color: rgb(255, 255, 255);
+  -unity-text-outline-width: 0;
+  color: rgb(255, 255, 255);
+}
