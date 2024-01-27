@@ -23,6 +23,7 @@ public class FireflySwitch : MonoBehaviour
             else tip.GetComponent<Renderer>().material = withoutFirefly;
 
             lightCollider.enabled = hasFirefly;
+            switchCable.SetLightActive(hasFirefly);
         });
     }
 
@@ -31,18 +32,15 @@ public class FireflySwitch : MonoBehaviour
     {
         if (hasFirefly.value)
         {
-            switchCable.SetLightActive(false);
             hasFirefly.value = false;
             if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(false);
             playerGrab.heldFireflies++;
         }
         else if (playerGrab.heldFireflies > 0)
         {
-            switchCable.SetLightActive(true);
             hasFirefly.value = true;
             if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(true);
             playerGrab.heldFireflies--;
-            Debug.Log("Firefly added");
         }
     }
 }
