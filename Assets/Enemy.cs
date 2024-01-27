@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
         {
             light.color = Color.green;
             agent.speed = 0f;
+            currentTimer = timeToStopChase;
             return;
         }
         else if(playerInSight)
