@@ -17,19 +17,19 @@ public class LevelDoor : MonoBehaviour
 
         isOpen.Subscribe((bool isOpen) =>
         {
-            Debug.Log($"Door {level}: {isOpen}");
+            // Debug.Log($"Door {level}: {isOpen}");
             if (isOpen)
             {
-                Debug.Log("Opening door");
+                // Debug.Log("Opening door");
                 doorColliderGameObject.SetActive(false);
             }
         });
 
         if (level <= gameManager.maxLevel.value) isOpen.value = true;
 
-        hubManager.activeSwitches.Subscribe((int maxLevel) =>
+        hubManager.activeSwitches.Subscribe((int activeSwitches) =>
         {
-            if (level <= maxLevel) isOpen.value = true;
+            if (level <= activeSwitches) isOpen.value = true;
         });
     }
 
