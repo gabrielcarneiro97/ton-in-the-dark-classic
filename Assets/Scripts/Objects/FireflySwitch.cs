@@ -8,6 +8,7 @@ public class FireflySwitch : MonoBehaviour
     public GameObject tip;
     public PlayerGrab playerGrab;
     [SerializeField] public GameObject switchable;
+    public Collider lightCollider;
 
     public Material withFirefly, withoutFirefly;
 
@@ -16,12 +17,14 @@ public class FireflySwitch : MonoBehaviour
         tip.GetComponent<Renderer>().material = withFirefly;
         Debug.Log("Firefly added METHOD CALLED");
         hasFirefly = true;
+        lightCollider.enabled = true;
     }
 
     public void RemoveFirefly()
     {
         tip.GetComponent<Renderer>().material = withoutFirefly;
         hasFirefly = false;
+        lightCollider.enabled = false;
     }
 
     public void Interact()

@@ -8,10 +8,11 @@ public class Firefly : MonoBehaviour
     bool isInLight;
     Rigidbody rb;
     public float speed;
-    Vector3 playerPos;
+    Vector3 lightPos;
     Vector3 startPos;
     float timeOutsideLight;
     public float timeOutsideLightToGoBack;
+    Collider currentLightCollider;
 
     private void Start() 
     {
@@ -34,8 +35,8 @@ public class Firefly : MonoBehaviour
     {
         if(isInLight)
         {
-            playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-            rb.AddForce((new Vector3(playerPos.x, playerPos.y + 2, playerPos.z) - transform.position).normalized * speed, ForceMode.Acceleration); 
+            lightPos = currentLightCollider.transform.position;
+            rb.AddForce((new Vector3(lightPos.x, lightPos.y + 2, lightPos.z) - transform.position).normalized * speed, ForceMode.Acceleration); 
         }
         else if (timeOutsideLight > timeOutsideLightToGoBack)
         {
@@ -48,6 +49,7 @@ public class Firefly : MonoBehaviour
     {
         if(other.CompareTag("FireflyLight"))
         {
+            currentLightCollider = other;
             isInLight = true;
         }
     }
@@ -56,6 +58,7 @@ public class Firefly : MonoBehaviour
     {
         if(other.CompareTag("FireflyLight"))
         {
+            currentLightCollider = null;
             isInLight = false;
         }
     }

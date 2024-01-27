@@ -5,11 +5,22 @@ using UnityEngine;
 public class Door : MonoBehaviour , ISwitchable
 {
     bool isOpen;
+    public int energyRequired = 1;
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
+    int energySourceCount;
     public void Switch(bool value)
     {
         if(value)
+        {
+            energySourceCount++;
+        }
+        else
+        {
+            energySourceCount--;
+        }
+
+        if(energySourceCount >= energyRequired)
         {
             Open();
         }
