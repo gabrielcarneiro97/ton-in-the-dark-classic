@@ -16,7 +16,9 @@ public class HubManager : MonoBehaviour, ISwitchable
 
     public void Switch(bool fireflySwitchState)
     {
+        Debug.Log($"Switching firefly switch to {fireflySwitchState}");
         activeSwitches.value += fireflySwitchState ? 1 : -1;
+        Debug.Log($"Active switches: {activeSwitches.value}");
     }
 
 }
