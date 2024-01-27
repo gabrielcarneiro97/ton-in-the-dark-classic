@@ -22,15 +22,15 @@ public class Door : MonoBehaviour , ISwitchable
     void Open()
     {
         isOpen = true;
-        leftDoor.transform.rotation = Quaternion.Euler(0, 90, 0);
-        rightDoor.transform.rotation = Quaternion.Euler(0, -90, 0);
+        leftDoor.transform.localRotation = Quaternion.Euler(0, 90, 0);
+        rightDoor.transform.localRotation = Quaternion.Euler(0, -90, 0);
     }
 
     void Close()
     {
         isOpen = false;
-        leftDoor.transform.rotation = Quaternion.Euler(0, 0, 0);
-        rightDoor.transform.rotation = Quaternion.Euler(0, 0, 0);
+        leftDoor.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        rightDoor.transform.localRotation = Quaternion.Euler(0, 0, 0);
         
     }
 }

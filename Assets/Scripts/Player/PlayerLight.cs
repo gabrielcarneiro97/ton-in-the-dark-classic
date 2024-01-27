@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +26,41 @@ public class PlayerLight : MonoBehaviour
             light.enabled = false;
             fireflyLightCollider.enabled = false;
         }
+        SetLightParams();
+    }
 
-        light.spotAngle = 70 + playerGrab.heldFireflies * 30;
-        light.innerSpotAngle = 40 + playerGrab.heldFireflies * 25;
-        fireflyLightCollider.radius = playerGrab.heldFireflies * 2f;
+
+    void SetLightParams()
+    {
+        transform.localPosition = new Vector3(0, 3 +  2.2f * playerGrab.heldFireflies, 0);
+
+        switch(playerGrab.heldFireflies)
+        {
+            case 0:
+                light.intensity = 9999;
+                break;
+            case 1:
+                light.intensity = 40;
+                break;
+            case 2:
+                light.intensity = 120;
+                break;
+            case 3:
+                light.intensity = 280;
+                break;
+            case 4:
+                light.intensity = 500;
+                break;
+            case 5:  
+                light.intensity = 1200;
+                break;
+            case > 5:  
+                light.intensity = 1200;
+                break;
+            default:
+                light.intensity = 9999;
+                break;
+        }
+        fireflyLightCollider.radius = 5 + playerGrab.heldFireflies * 5f;
     }
 }

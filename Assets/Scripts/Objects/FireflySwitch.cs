@@ -14,6 +14,7 @@ public class FireflySwitch : MonoBehaviour
     public void AddFirefly()
     {
         tip.GetComponent<Renderer>().material = withFirefly;
+        Debug.Log("Firefly added METHOD CALLED");
         hasFirefly = true;
     }
 
@@ -36,6 +37,7 @@ public class FireflySwitch : MonoBehaviour
             AddFirefly();
             switchable.GetComponent<ISwitchable>().Switch(true);
             playerGrab.heldFireflies--;
+            Debug.Log("Firefly added");
         }
     }
 }

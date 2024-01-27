@@ -198,6 +198,8 @@ GameObject:
   - component: {fileID: 4388984990193500057}
   - component: {fileID: 7187370361071050980}
   - component: {fileID: 2497590604005648208}
+  - component: {fileID: 3971664025430561599}
+  - component: {fileID: 5468773099473367808}
   m_Layer: 0
   m_Name: Firefly
   m_TagString: Untagged
@@ -295,3 +297,44 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3971664025430561599
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146123303768261230}
+  serializedVersion: 4
+  m_Mass: 0.01
+  m_Drag: 5
+  m_AngularDrag: 1
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &5468773099473367808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146123303768261230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f102dd692ffde42b93f4dc31a6d006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  timeOutsideLightToGoBack: 5
