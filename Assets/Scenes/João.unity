@@ -321,12 +321,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4fd8611abcdc64285158b31cbad086, type: 3}
---- !u!1 &854229656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8381780301856148368, guid: 4bdd744eb4da64c41bb987319ce765d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2979153172616265707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &876413234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2511,11 +2505,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
-      propertyPath: tip
-      value: 
-      objectReference: {fileID: 854229656}
-    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
-        type: 3}
       propertyPath: playerGrab
       value: 
       objectReference: {fileID: 2013935049}
@@ -2528,21 +2517,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Switch
-      objectReference: {fileID: 0}
-    - target: {fileID: 8094887652240397032, guid: 4bdd744eb4da64c41bb987319ce765d6,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8094887652240397032, guid: 4bdd744eb4da64c41bb987319ce765d6,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8094887652240397032, guid: 4bdd744eb4da64c41bb987319ce765d6,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8094887652240397032, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
@@ -2593,11 +2567,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8094887652240397032, guid: 4bdd744eb4da64c41bb987319ce765d6,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
