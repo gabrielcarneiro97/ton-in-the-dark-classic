@@ -4,38 +4,35 @@ using UnityEngine;
 
 public class FireflySwitch : MonoBehaviour
 {
-    public bool hasFirefly;
+    public Observable<bool> hasFirefly = new(false);
     public GameObject tip;
     public PlayerGrab playerGrab;
     [SerializeField] public GameObject switchable;
 
     public Material withFirefly, withoutFirefly;
 
-    public void AddFirefly()
+
+    void Start()
     {
-        tip.GetComponent<Renderer>().material = withFirefly;
-        Debug.Log("Firefly added METHOD CALLED");
-        hasFirefly = true;
+        hasFirefly.Subscribe((hasFirefly) =>
+        {
+            if (hasFirefly) tip.GetComponent<Renderer>().material = withFirefly; else tip.GetComponent<Renderer>().material = withoutFirefly;
+        });
     }
 
-    public void RemoveFirefly()
-    {
-        tip.GetComponent<Renderer>().material = withoutFirefly;
-        hasFirefly = false;
-    }
 
     public void Interact()
     {
-        if (hasFirefly)
+        if (hasFirefly.value)
         {
-            RemoveFirefly();
-            switchable.GetComponent<ISwitchable>().Switch(false);
+            hasFirefly.value = false;
+            if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(false);
             playerGrab.heldFireflies++;
         }
-        else if(playerGrab.heldFireflies > 0)
+        else if (playerGrab.heldFireflies > 0)
         {
-            AddFirefly();
-            switchable.GetComponent<ISwitchable>().Switch(true);
+            hasFirefly.value = true;
+            if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(true);
             playerGrab.heldFireflies--;
             Debug.Log("Firefly added");
         }
