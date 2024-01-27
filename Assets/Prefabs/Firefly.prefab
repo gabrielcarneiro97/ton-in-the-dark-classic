@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5749257671516097224}
   - component: {fileID: 1482193691292765620}
   - component: {fileID: 6708429355396283162}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: GrabArea
   m_TagString: FireflyGrabArea
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 3641760839203530134}
   - component: {fileID: 3938774132442429713}
   - component: {fileID: 1531872946242310783}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 0, g: 1, b: 0.21415734, a: 1}
+  m_Color: {r: 0.5280193, g: 1, b: 0, a: 1}
   m_Intensity: 44.06
   m_Range: 3
   m_SpotAngle: 105.0818
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 2497590604005648208}
   - component: {fileID: 3971664025430561599}
   - component: {fileID: 5468773099473367808}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Firefly
   m_TagString: Firefly
   m_Icon: {fileID: 0}

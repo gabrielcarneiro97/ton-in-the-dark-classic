@@ -12,6 +12,7 @@ public class PlayerLight : MonoBehaviour
     private void Start()
     {
         var light = GetComponent<Light>();
+        fireflyLightCollider.enabled = false;
         playerGrab.heldFireflies.Subscribe((heldFireflies) =>
         {
             if (heldFireflies > 0)

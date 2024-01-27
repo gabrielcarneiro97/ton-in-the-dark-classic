@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Door : MonoBehaviour , ISwitchable
 {
-    bool isOpen;
     public int energyRequired = 1;
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
-    int energySourceCount;
+    public int energySourceCount;
     public void Switch(bool value)
     {
         if(value)
@@ -22,26 +21,42 @@ public class Door : MonoBehaviour , ISwitchable
 
         if(energySourceCount >= energyRequired)
         {
-            Open();
+            StartCoroutine(LeftDoorAnimation(true));
+            StartCoroutine(RightDoorAnimation(true));
         }
         else
         {
-            Close();
+            StartCoroutine(LeftDoorAnimation(false));
+            StartCoroutine(RightDoorAnimation(false));
         }
     }
 
-    void Open()
+    IEnumerator LeftDoorAnimation(bool value)
     {
-        isOpen = true;
-        leftDoor.transform.localRotation = Quaternion.Euler(0, 90, 0);
-        rightDoor.transform.localRotation = Quaternion.Euler(0, -90, 0);
+        CinemachineShake.Instance.ShakeCamera(1f, 0.5f, CinemachineShake.ShakeType.STABLE);
+        float t = 0;
+        Quaternion startRotation = leftDoor.transform.localRotation;
+        Quaternion endRotation = value ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 0, 0);
+        while(t < 1)
+        {
+            t += Time.deltaTime * 2;
+            leftDoor.transform.localRotation = Quaternion.Lerp(startRotation, endRotation, t);
+            yield return null;
+        }
+        
     }
 
-    void Close()
+    IEnumerator RightDoorAnimation(bool value)
     {
-        isOpen = false;
-        leftDoor.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        rightDoor.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        float t = 0;
+        Quaternion startRotation = rightDoor.transform.localRotation;
+        Quaternion endRotation = value ? Quaternion.Euler(0, -90, 0) : Quaternion.Euler(0, 0, 0);
+        while(t < 1)
+        {
+            t += Time.deltaTime * 2;
+            rightDoor.transform.localRotation = Quaternion.Lerp(startRotation, endRotation, t);
+            yield return null;
+        }
         
     }
 }

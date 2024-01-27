@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6003792198087267181}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2942355364882951505}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pole (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2598855131876243697}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pole (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551922376597254547}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pole (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6057172618657455677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pole (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 5538669635395692347}
   - component: {fileID: 2204872168910296783}
   - component: {fileID: 7315386005866623524}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6557718764841271513}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pole (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

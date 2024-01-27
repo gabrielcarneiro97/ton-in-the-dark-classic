@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -42,7 +43,14 @@ public class PlayerMovement : MonoBehaviour
 
     void DoMovement()
     {
-        rb.AddForce(movementInput * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        if(CheckIfCanWalkForward())
+        {
+            rb.AddForce(movementInput * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     void RotateTowardsMovement()
@@ -51,5 +59,29 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(movementInput), 0.15F * rotationSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position + transform.forward * 0.3f + Vector3.up, Vector3.down * 3);
+    }
+    bool CheckIfCanWalkForward()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + transform.forward * 0.6f + Vector3.up, Vector3.down, out hit, 3))
+        {
+            if(hit.collider != null)
+                Debug.Log(hit.collider.name);
+            if(hit.collider.tag == "Floor")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        return false;
     }
 }
