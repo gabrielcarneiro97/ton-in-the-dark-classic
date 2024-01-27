@@ -11,20 +11,42 @@ public class Enemy : MonoBehaviour
     public bool playerInSight = false;
     public float regularSpeed = 3.5f;
     public float chaseSpeed = 5f;
+    bool stoppedByFirefly = false;
+    Light light;
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(waypoints[currentWaypoint].position);
+        light = GetComponentInChildren<Light>();
+    }
+
+    private void FixedUpdate() {
+        stoppedByFirefly = false;
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if(other.gameObject.tag == "Firefly")
+        {
+            stoppedByFirefly = true;
+        }
     }
 
     private void Update() {
-        if(playerInSight)
+        if(stoppedByFirefly)
         {
+            light.color = Color.green;
+            agent.speed = 0f;
+            return;
+        }
+        else if(playerInSight)
+        {
+            light.color = Color.red;
             agent.speed = chaseSpeed;
             agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
         }
         else
         {
+            light.color = Color.white;
             agent.speed = regularSpeed;
             if(agent.remainingDistance < 0.1f)
             {

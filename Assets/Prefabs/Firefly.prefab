@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5468773099473367808}
   m_Layer: 0
   m_Name: Firefly
-  m_TagString: Untagged
+  m_TagString: Firefly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,3 +338,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   timeOutsideLightToGoBack: 5
+  flyToLevelEnd: 0

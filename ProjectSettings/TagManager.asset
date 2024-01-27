@@ -10,6 +10,7 @@ TagManager:
   - SwitchableArea
   - LevelEnd
   - Enemy
+  - Firefly
   layers:
   - Default
   - TransparentFX
