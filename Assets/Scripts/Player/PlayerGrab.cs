@@ -76,6 +76,6 @@ public class PlayerGrab : MonoBehaviour
     public void ReleaseFirefly()
     {
         heldFireflies--;
-        Instantiate(fireflyPrefab, transform.position + transform.forward * 2, Quaternion.identity);
+        Instantiate(fireflyPrefab, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z + 3), Quaternion.identity);
     }
 }
