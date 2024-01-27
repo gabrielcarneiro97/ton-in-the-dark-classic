@@ -11,11 +11,11 @@ public class FireflyPipeStart : MonoBehaviour, IInteractable
     {
         if (fireflyPipe.hasFirefly.value) return;
 
-        if (playerGrab.heldFireflies > 0)
+        if (playerGrab.heldFireflies.value > 0)
         {
             // TODO: animate close pipe
             fireflyPipe.hasFirefly.value = true;
-            playerGrab.heldFireflies--;
+            playerGrab.heldFireflies.value--;
             StartCoroutine(fireflyPipe.RunThroughPipe());
         }
     }

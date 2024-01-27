@@ -10,7 +10,7 @@ public class FireflyGrabManager : MonoBehaviour, IInteractable
     public void Interact()
     {
         playerGrab = GameObject.FindWithTag("Player").GetComponent<PlayerGrab>();
-        playerGrab.heldFireflies++;
+        playerGrab.heldFireflies.value++;
         playerGrab.enteredColliders.Remove(gameObject.GetComponent<Collider>());
         Destroy(ownerFirefly);
     }

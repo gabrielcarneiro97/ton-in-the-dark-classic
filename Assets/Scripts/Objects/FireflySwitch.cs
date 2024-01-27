@@ -34,13 +34,13 @@ public class FireflySwitch : MonoBehaviour
         {
             hasFirefly.value = false;
             if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(false);
-            playerGrab.heldFireflies++;
+            playerGrab.heldFireflies.value++;
         }
-        else if (playerGrab.heldFireflies > 0)
+        else if (playerGrab.heldFireflies.value > 0)
         {
             hasFirefly.value = true;
             if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(true);
-            playerGrab.heldFireflies--;
+            playerGrab.heldFireflies.value--;
         }
     }
 }

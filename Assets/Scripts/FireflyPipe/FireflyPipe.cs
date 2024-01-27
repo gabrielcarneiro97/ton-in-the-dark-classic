@@ -15,7 +15,7 @@ public class FireflyPipe : MonoBehaviour
     {
         fireflySwitch.hasFirefly.Subscribe((hasFireflySwitch) =>
         {
-            if (hasFireflySwitch) hasFirefly.value = false;
+            hasFirefly.value = hasFireflySwitch;
         });
     }
 
