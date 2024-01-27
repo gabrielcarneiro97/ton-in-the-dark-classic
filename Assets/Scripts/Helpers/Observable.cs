@@ -1,8 +1,12 @@
 using UnityEngine.Events;
+using System;
+using UnityEngine;
 
+[Serializable]
 public class Observable<T>
 {
     private T _value;
+
     public T value
     {
         get => _value;
