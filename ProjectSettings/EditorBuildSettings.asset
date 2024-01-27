@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Gabriel.unity
+    guid: 14973a2418d7547458f8908f9cb690e3
+  - enabled: 1
     path: Assets/Scenes/Levels/Level02.unity
     guid: 4dea3b899c0c40f4c9bb793887dc470e
   - enabled: 1
