@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HubManager : MonoBehaviour
+public class HubManager : MonoBehaviour, ISwitchable
 {
     GameManager gameManager;
-    public int selectedLevel = 0;
+    public Observable<int> activeSwitches = new(0);
 
     public List<GameObject> levelDoors = new();
-    public GameObject selector;
 
     void Start()
     {
         gameManager = GameManager.instance;
-        selectedLevel = gameManager.maxLevel.value;
-        gameManager.maxLevel.Subscribe(OnMaxLevelChange);
     }
 
-    void OnMaxLevelChange(int maxLevel)
+    public void Switch(bool fireflySwitchState)
     {
-        selectedLevel = maxLevel;
+        activeSwitches.value += fireflySwitchState ? 1 : -1;
     }
 
 }

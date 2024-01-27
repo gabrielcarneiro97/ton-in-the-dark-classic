@@ -8,9 +8,12 @@ public class LevelDoor : MonoBehaviour
 
     public GameObject doorColliderGameObject;
 
+    HubManager hubManager;
+
     void Start()
     {
         gameManager = GameManager.instance;
+        hubManager = GameObject.Find("HubManager").GetComponent<HubManager>();
 
         isOpen.Subscribe((bool isOpen) =>
         {
@@ -24,7 +27,7 @@ public class LevelDoor : MonoBehaviour
 
         if (level <= gameManager.maxLevel.value) isOpen.value = true;
 
-        gameManager.maxLevel.Subscribe((int maxLevel) =>
+        hubManager.activeSwitches.Subscribe((int maxLevel) =>
         {
             if (level <= maxLevel) isOpen.value = true;
         });
