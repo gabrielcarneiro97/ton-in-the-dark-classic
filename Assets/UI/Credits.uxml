@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=bc109548ab2ac4bec84f7b3975b6f232&amp;type=3#StyleSheet" />
+    <ui:VisualElement style="flex-grow: 0; align-items: center;">
+        <ui:Label text="Credits" name="Title" class="title" style="margin-top: 20px;" />
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement style="flex-grow: 1; flex-shrink: 0;">
+                <ui:Label text="Programmers" name="DevsTitle" class="h2" style="margin-top: 20px;" />
+                <ui:VisualElement name="Devs" style="flex-grow: 0; align-items: flex-start; flex-direction: row; align-self: auto; justify-content: center;">
+                    <ui:Label text="João Pedro Bax" name="DevText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                    <ui:Label text="Gabriel Carneiro de Castro" name="DevText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Label text="Game Designers" name="DevsTitle" class="h2" style="margin-top: 20px;" />
+                <ui:VisualElement name="Devs" style="flex-grow: 0; align-items: flex-start; flex-direction: row; align-self: auto; justify-content: center;">
+                    <ui:Label text="João Pedro Bax" name="DevText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                    <ui:Label text="Gabriel Carneiro de Castro" name="DevText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                    <ui:Label text="Ana Clara Britto" name="ArtistsText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between; align-self: auto; align-items: flex-start;">
+            <ui:VisualElement style="flex-grow: 1; flex-shrink: 1; align-items: center;">
+                <ui:Label text="Artists" name="ArtistsTitle" class="h2" style="margin-top: 10px;" />
+                <ui:VisualElement name="Artists" style="flex-grow: 0; align-items: flex-start; flex-direction: row; align-self: auto; justify-content: center;">
+                    <ui:Label text="Ana Clara Britto" name="ArtistsText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Label text="Advisors" name="AdvisorsTitle" class="h2" style="margin-top: 10px;" />
+                <ui:VisualElement name="Advisors" style="flex-grow: 0; align-items: flex-start; flex-direction: row; align-self: auto; justify-content: center;">
+                    <ui:Label text="Luis Felipe Garrocho&lt;br&gt;Michelle Nery&lt;br&gt;Josemar" name="AdvisorsText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                    <ui:Label text="Marcos Arrais&lt;br&gt;Daniel Pinheiro Lima" name="AdvisorsText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                    <ui:Label text="Arthur Mol&lt;br&gt;João&lt;br&gt;Samuel Laprovita" name="AdvisorsText" style="font-size: 12px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="Menu" name="BackToMenu" class="btn" style="font-size: 16px; width: 20%; margin-top: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>

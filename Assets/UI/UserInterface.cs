@@ -23,7 +23,7 @@ public class UserInterface : MonoBehaviour
         foreach (var buttonName in buttonNames)
         {
             var button = root.Q<Button>(buttonName);
-            button.RegisterCallbackOnce(HandleClick(buttonName));
+            button.RegisterCallback(HandleClick(buttonName));
             buttons[buttonName] = button;
             button.RegisterCallback((FocusEvent ev) =>
             {
