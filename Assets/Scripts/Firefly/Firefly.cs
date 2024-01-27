@@ -13,6 +13,7 @@ public class Firefly : MonoBehaviour
     float timeOutsideLight;
     public float timeOutsideLightToGoBack;
     Collider currentLightCollider;
+    public bool flyToLevelEnd = false;
 
     private void Start() 
     {
@@ -33,6 +34,11 @@ public class Firefly : MonoBehaviour
 
     private void FixedUpdate() 
     {
+        if(flyToLevelEnd)
+        {
+            FlyToLevelEnd();
+            return;
+        }
         if(isInLight)
         {
             lightPos = currentLightCollider.transform.position;
@@ -66,5 +72,11 @@ public class Firefly : MonoBehaviour
             currentLightCollider = null;
             isInLight = false;
         }
+    }
+
+    void FlyToLevelEnd()
+    {
+        Vector3 levelEndPos = GameObject.FindGameObjectWithTag("LevelEnd").transform.position;
+        rb.AddForce((levelEndPos - transform.position).normalized * speed * 50, ForceMode.Acceleration);
     }
 }
