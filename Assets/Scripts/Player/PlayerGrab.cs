@@ -27,6 +27,12 @@ public class PlayerGrab : MonoBehaviour
             Collider closestCollider = enteredColliders[0];
             for(int i = 0; i < enteredColliders.Count; i++)
             {
+                if(enteredColliders[i].GetComponentInParent<Firefly>())
+                {
+                    closestCollider = enteredColliders[i];
+                    closestCollider.GetComponent<IInteractable>().Interact();
+                    return;
+                }
                 if(Vector3.Distance(transform.position, enteredColliders[i].transform.position) < Vector3.Distance(transform.position, closestCollider.transform.position))
                 {
                     closestCollider = enteredColliders[i];
