@@ -41,7 +41,6 @@ public class FireflySwitch : MonoBehaviour
             hasFirefly.value = true;
             if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(true);
             playerGrab.heldFireflies--;
-            Debug.Log("Firefly added");
         }
     }
 }
