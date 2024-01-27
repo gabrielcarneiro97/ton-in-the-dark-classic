@@ -1,9 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=bc109548ab2ac4bec84f7b3975b6f232&amp;type=3#StyleSheet" />
     <ui:VisualElement style="flex-grow: 1; align-items: center;">
-        <ui:Label text="Toby in the Dark" name="Title" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Wonderland.otf?fileID=12800000&amp;guid=f69e102f6f9b44b0c8201e6242dea945&amp;type=3#Wonderland&apos;); align-items: auto; -unity-text-align: upper-center; font-size: 40px; -unity-font-style: normal; margin-top: 40px; color: rgb(255, 255, 255);" />
-        <ui:Button text="Start Game" name="Start" class="btn" style="background-image: none; width: 50%; background-color: rgba(103, 154, 217, 0.53); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Wonderland.otf?fileID=12800000&amp;guid=f69e102f6f9b44b0c8201e6242dea945&amp;type=3#Wonderland&apos;); font-size: 20px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; -unity-background-scale-mode: stretch-to-fill; -unity-slice-top: 0; -unity-background-image-tint-color: rgb(255, 255, 255); -unity-text-outline-width: 0; color: rgb(255, 255, 255);" />
+        <ui:Label text="Toninho no Escuro" name="Title" class="title" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Wonderland.otf?fileID=12800000&amp;guid=f69e102f6f9b44b0c8201e6242dea945&amp;type=3#Wonderland&apos;); align-items: auto; -unity-text-align: upper-center; font-size: 40px; -unity-font-style: normal; margin-top: 40px; color: rgb(255, 255, 255);" />
+        <ui:Button text="Start Game" name="Start" class="btn" />
+        <ui:Button text="Controls" name="Controls" class="btn" />
         <ui:Button text="Options" name="Options" class="btn" />
+        <ui:Button text="Credits" name="Credits" class="btn" />
         <ui:Button text="Exit" name="Exit" class="btn" />
     </ui:VisualElement>
 </ui:UXML>

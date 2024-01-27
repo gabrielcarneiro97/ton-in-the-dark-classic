@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public Observable<int> maxLevel = new(0);
-
+    public Observable<int> lastLevelCompleted = new(0);
 }

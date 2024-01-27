@@ -20,7 +20,7 @@ public class LevelDoor : MonoBehaviour
             if (isOpen) doorColliderGameObject.SetActive(false);
         });
 
-        if (level <= gameManager.maxLevel.value) isOpen.value = true;
+        if (level <= gameManager.lastLevelCompleted.value) isOpen.value = true;
 
         hubManager.activeSwitches.Subscribe((int activeSwitches) =>
         {
