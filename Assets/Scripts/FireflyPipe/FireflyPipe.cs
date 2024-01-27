@@ -8,9 +8,8 @@ public class FireflyPipe : MonoBehaviour
     public Observable<bool> hasFirefly = new(false);
     public SplineAnimate fireflySplineAnimate;
     public GameObject firefly;
-
-
     public FireflySwitch fireflySwitch;
+    public GameObject fireflySwitchInteractableArea;
 
     void Start()
     {
@@ -22,11 +21,12 @@ public class FireflyPipe : MonoBehaviour
 
     public IEnumerator RunThroughPipe()
     {
-        Debug.Log("Running through pipe");
         var newFirefly = Instantiate(firefly, firefly.transform.position, Quaternion.identity);
+        fireflySwitchInteractableArea.SetActive(false);
         newFirefly.SetActive(true);
         yield return new WaitForSeconds(fireflySplineAnimate.Duration);
         Destroy(newFirefly);
+        fireflySwitchInteractableArea.SetActive(true);
         fireflySwitch.hasFirefly.value = true;
     }
 }
