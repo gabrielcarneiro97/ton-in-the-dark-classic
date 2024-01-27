@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movementInput;
     public float speed;
     public float rotationSpeed;
+    public Animator animator;
 
     private void Start() 
     {
@@ -16,6 +18,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() 
     {
+        if(rb.velocity.magnitude > 0.5f)
+        {
+            animator.SetBool("isWalking", true);
+            animator.speed = rb.velocity.magnitude / 6;
+        }
+        else
+        {
+            animator.speed = 1;
+            animator.SetBool("isWalking", false);
+        }
         movementInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         Vector3.Normalize(movementInput);
     }
@@ -28,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void DoMovement()
     {
-        rb.MovePosition(rb.position + movementInput * Time.fixedDeltaTime * speed);
+        rb.AddForce(movementInput * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
 
     void RotateTowardsMovement()

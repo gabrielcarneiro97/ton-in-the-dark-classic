@@ -7,6 +7,7 @@ public class PlayerGrab : MonoBehaviour
     [SerializeField] GameObject fireflyPrefab;
     public Observable<int> heldFireflies = new(0);
     public List<Collider> enteredColliders = new List<Collider>();
+    public Animator animator;
 
     private void Update()
     {
@@ -14,10 +15,10 @@ public class PlayerGrab : MonoBehaviour
         {
             Interact();
         }
-        else if (Input.GetKeyDown(KeyCode.Q) && heldFireflies.value > 0 || Input.GetKeyDown(KeyCode.Joystick1Button3) && heldFireflies.value > 0)
-        {
-            ReleaseFirefly();
-        }
+        // else if (Input.GetKeyDown(KeyCode.Q) && heldFireflies.value > 0 || Input.GetKeyDown(KeyCode.Joystick1Button3) && heldFireflies.value > 0)
+        // {
+        //     ReleaseFirefly();
+        // }
     }
 
     void Interact()
@@ -39,6 +40,7 @@ public class PlayerGrab : MonoBehaviour
                 }
             }
             closestCollider.GetComponent<IInteractable>().Interact();
+            animator.SetTrigger("Interact");
         }
     }
 

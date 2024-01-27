@@ -6,6 +6,11 @@ public class ShadowObjectCell : MonoBehaviour
 {
     public bool isWall;
 
+    private void Start() {
+        if(isWall)
+            GetComponent<MeshCollider>().isTrigger = true;
+    }
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.green;
         Gizmos.DrawMesh(GetComponent<MeshFilter>().sharedMesh, transform.position, transform.rotation, transform.localScale);
