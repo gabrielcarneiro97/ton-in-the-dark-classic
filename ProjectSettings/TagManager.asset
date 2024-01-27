@@ -9,6 +9,7 @@ TagManager:
   - InteractableArea
   - SwitchableArea
   - LevelEnd
+  - Enemy
   layers:
   - Default
   - TransparentFX
