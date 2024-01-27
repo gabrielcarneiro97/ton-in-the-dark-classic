@@ -7,7 +7,7 @@ public class PlayerGrab : MonoBehaviour
     [SerializeField] GameObject fireflyPrefab;
     public Observable<int> heldFireflies = new(0);
     public List<Collider> enteredColliders = new List<Collider>();
-    public Animator animator;
+    public Animator animator, lanternAnimator;
 
     private void Update()
     {
@@ -41,6 +41,7 @@ public class PlayerGrab : MonoBehaviour
             }
             closestCollider.GetComponent<IInteractable>().Interact();
             animator.SetTrigger("Interact");
+            lanternAnimator.SetTrigger("Interact");
         }
     }
 

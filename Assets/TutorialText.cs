@@ -8,7 +8,7 @@ public class TutorialText : MonoBehaviour
     bool isRunning = false;
     public TMP_Text text;
     float runningTime = 0f;
-    float totalRunningTime = 3f;
+    float totalRunningTime = 5f;
 
     void Update()
     {

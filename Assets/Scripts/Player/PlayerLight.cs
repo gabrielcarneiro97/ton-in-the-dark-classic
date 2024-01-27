@@ -7,6 +7,7 @@ public class PlayerLight : MonoBehaviour
 {
     public PlayerGrab playerGrab;
     public SphereCollider fireflyLightCollider;
+    public Transform lanternPos;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class PlayerLight : MonoBehaviour
 
     void SetLightParams(int heldFireflies, Light light)
     {
-        transform.localPosition = new Vector3(0, 3 + 2.2f * heldFireflies, 0);
+        transform.position = new Vector3(lanternPos.position.x, lanternPos.position.y + 3 + 2.2f * heldFireflies, lanternPos.position.z);
 
         light.intensity = heldFireflies switch
         {
