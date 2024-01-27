@@ -43,6 +43,11 @@ public class Firefly : MonoBehaviour
             if((transform.position - startPos).magnitude > 0.1f)
                 rb.AddForce((startPos - transform.position).normalized * speed, ForceMode.Acceleration); 
         }
+        if((lightPos - rb.transform.position).magnitude < 0.1f && currentLightCollider.GetComponentInParent<FireflySwitch>())
+        {
+            currentLightCollider.GetComponentInParent<FireflySwitch>().Interact();
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other) 

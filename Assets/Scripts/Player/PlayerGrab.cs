@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
-    public List<GameObject> closeFireflies = new List<GameObject>();
     [SerializeField] GameObject fireflyPrefab;
     public int heldFireflies = 0;
     public List<Collider> enteredColliders = new List<Collider>();
@@ -13,7 +12,6 @@ public class PlayerGrab : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
-            GrabFirefly();
             Interact();
         }
         else if (Input.GetKeyDown(KeyCode.Q) && heldFireflies > 0 || Input.GetKeyDown(KeyCode.Joystick1Button3) && heldFireflies > 0)
@@ -32,9 +30,8 @@ public class PlayerGrab : MonoBehaviour
                 if(Vector3.Distance(transform.position, enteredColliders[i].transform.position) < Vector3.Distance(transform.position, closestCollider.transform.position))
                 {
                     closestCollider = enteredColliders[i];
-                }     
+                }  
             }
-
             closestCollider.GetComponent<IInteractable>().Interact();
         }
     }
@@ -45,10 +42,6 @@ public class PlayerGrab : MonoBehaviour
         {
             enteredColliders.Add(other);
         }
-        if (other.gameObject.tag == "FireflyGrabArea")
-        {
-            closeFireflies.Add(other.gameObject);
-        }
     }
 
     private void OnTriggerExit(Collider other) 
@@ -56,20 +49,6 @@ public class PlayerGrab : MonoBehaviour
         if(other.GetComponent<IInteractable>() != null)
         {
             enteredColliders.Remove(other);
-        }
-        if (other.gameObject.tag == "FireflyGrabArea")
-        {
-            closeFireflies.Remove(other.gameObject);
-        }
-    }
-
-    public void GrabFirefly()
-    {
-        if (closeFireflies.Count > 0)
-        {
-            closeFireflies[0].GetComponent<FireflyGrabManager>().GrabFirefly();
-            heldFireflies++;
-            closeFireflies.RemoveAt(0);
         }
     }
 
