@@ -14,7 +14,7 @@ public class FireflyLight : MonoBehaviour
     }
 
     private void Update() {
-        light.intensity = 10 + pulseAmount * Mathf.Sin(Time.time * pulseSpeed);
-        renderer.material.SetFloat("_EmissionMapIntensity", 0.5f + pulseAmount * Mathf.Sin(Time.time * pulseSpeed));
+        //light.intensity = 10 + pulseAmount * Mathf.Sin(Time.time * pulseSpeed);
+        //renderer.material.SetFloat("_EmissionMapIntensity", 0.5f + pulseAmount * Mathf.Sin(Time.time * pulseSpeed));
     }
 }
