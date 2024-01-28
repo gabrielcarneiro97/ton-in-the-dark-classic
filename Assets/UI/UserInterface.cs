@@ -21,6 +21,7 @@ public class UserInterface : MonoBehaviour
 
         foreach (var buttonName in buttonNames)
         {
+            Debug.Log(buttonName);
             var button = root.Q<Button>(buttonName);
             button.RegisterCallback(HandleClick(buttonName));
             buttons[buttonName] = button;

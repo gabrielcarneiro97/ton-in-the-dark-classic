@@ -4,6 +4,6 @@
         <ui:Label text="Pause" class="title" style="margin-bottom: 10px;" />
         <ui:Button text="Resume" name="Resume" class="btn" />
         <ui:Button text="Restart Level" name="Restart" class="btn" />
-        <ui:Button text="Back to Hub" name="BackToHub" class="btn" />
+        <ui:Button text="Back to Hub" name="ReturnToHub" class="btn" />
     </ui:VisualElement>
 </ui:UXML>
