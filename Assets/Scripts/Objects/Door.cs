@@ -60,4 +60,10 @@ public class Door : MonoBehaviour, ISwitchable
         }
 
     }
+
+    public void CutSceneOpenDoor()
+    {
+        StartCoroutine(LeftDoorAnimation(true));
+        StartCoroutine(RightDoorAnimation(true));
+    }
 }
