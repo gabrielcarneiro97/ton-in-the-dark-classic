@@ -8,6 +8,8 @@ public class PlayerGrab : MonoBehaviour
     public Observable<int> heldFireflies = new(0);
     public List<Collider> enteredColliders = new List<Collider>();
     public Animator animator, lanternAnimator;
+    public List<GameObject> grabbedFireflies = new List<GameObject>();
+    
 
     private void Update()
     {
@@ -43,6 +45,15 @@ public class PlayerGrab : MonoBehaviour
             animator.SetTrigger("Interact");
             lanternAnimator.SetTrigger("Interact");
         }
+    }
+
+    IEnumerator GrabFirefly(GameObject firefly)
+    {
+        firefly.GetComponent<Rigidbody>().isKinematic = true;
+        firefly.GetComponent<Collider>().enabled = false;
+        firefly.transform.SetParent(transform);
+
+        
     }
 
     private void OnTriggerEnter(Collider other)

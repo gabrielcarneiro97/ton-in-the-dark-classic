@@ -54,6 +54,16 @@ public class Firefly : MonoBehaviour
             currentLightCollider.GetComponentInParent<FireflySwitch>().Interact();
             Destroy(gameObject);
         }
+        FaceMovementDirection();
+    }
+
+    void FaceMovementDirection()
+    {
+        Vector3 dir = rb.velocity;
+        if(dir != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(dir);
+        }
     }
 
     private void OnTriggerEnter(Collider other) 
