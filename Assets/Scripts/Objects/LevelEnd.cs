@@ -34,7 +34,12 @@ public class LevelEnd : MonoBehaviour
             if (!done) return;
 
             gameManager.sceneToLoad = "Scenes/HubScene";
-            if (finalLevel) gameManager.sceneToLoad = "Scenes/CutScene";
+            if (finalLevel){
+                gameManager.sceneToLoad = "Scenes/CutScene";
+                soundManager.ChangeAmbientVolume(0);
+                soundManager.ChangeEffectsVolume(0);
+                
+            } 
             gameManager.StartLoading();
         });
 
