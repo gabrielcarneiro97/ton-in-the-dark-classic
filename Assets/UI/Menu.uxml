@@ -8,7 +8,7 @@
                 <ui:Button text="Controls" name="Controls" class="btn" style="background-color: rgba(103, 217, 112, 0.53);" />
                 <ui:Button text="Options" name="Options" class="btn" style="background-color: rgba(108, 217, 103, 0.53);" />
                 <ui:Button text="Credits" name="Credits" class="btn" style="background-color: rgba(130, 217, 103, 0.53);" />
-                <ui:Button text="Cutscene" name="Credits" class="btn" style="background-color: rgba(130, 217, 103, 0.53);" />
+                <ui:Button text="Cutscene" name="Cutscene" class="btn" style="background-color: rgba(130, 217, 103, 0.53);" />
                 <ui:Button text="Exit" name="Exit" class="btn" style="background-color: rgba(121, 217, 103, 0.53);" />
             </ui:VisualElement>
         </ui:VisualElement>
