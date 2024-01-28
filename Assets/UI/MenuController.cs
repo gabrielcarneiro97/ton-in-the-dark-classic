@@ -8,12 +8,14 @@ using UnityEngine.UIElements;
 public class MenuController : UserInterface
 {
     GameManager gameManager;
+    SoundManager soundManager;
     public UserInterface creditsUI;
     public UserInterface controlsUI;
     public UserInterface optionsUI;
     public new void Start()
     {
         gameManager = GameManager.instance;
+        soundManager = SoundManager.instance;
         buttonNames.Add("Start");
         buttonNames.Add("Controls");
         buttonNames.Add("Options");
@@ -47,6 +49,8 @@ public class MenuController : UserInterface
             ,
             "Cutscene" => (ClickEvent ev) =>
             {
+                soundManager.ChangeAmbientVolume(0);
+                soundManager.ChangeEffectsVolume(0);
                 gameManager.sceneToLoad = "Scenes/CutScene";
                 gameManager.StartLoading();
             }
