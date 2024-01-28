@@ -6,7 +6,7 @@ public class SoundManager : Singleton<SoundManager>
 {
     public AudioSource musicSource, cricketSource, stepsSource, playerEffectsSource, effectsSource, fireflySource;
 
-    public AudioClip musicClip, cricketsClip, stepsClip, fireflyesClip, playerInteractClip, coverClip, doorsClip;
+    public AudioClip musicClip, cricketsClip, stepsClip, fireflyesClip, playerInteractClip, coverClip, doorsClip, endLevelClip;
 
     public float ambientVolumeModifier = .3f;
     public float effectsVolume = 1f, ambientVolume = 1f;
@@ -62,6 +62,12 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayDoors()
     {
         effectsSource.clip = doorsClip;
+        effectsSource.Play();
+    }
+
+    public void PlayEndLevel()
+    {
+        effectsSource.clip = endLevelClip;
         effectsSource.Play();
     }
 

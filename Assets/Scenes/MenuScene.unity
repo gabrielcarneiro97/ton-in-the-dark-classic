@@ -805,11 +805,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1041171328451120305, guid: 33af48cbc38da4f24b4d98c7662c6e19,
-        type: 3}
-      propertyPath: stepsClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f6ae70b82ebe73849aeb96a0d6a137b9, type: 3}
     - target: {fileID: 6012833101891740475, guid: 33af48cbc38da4f24b4d98c7662c6e19,
         type: 3}
       propertyPath: m_LocalPosition.x
