@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     bool CheckIfCanWalkForward()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position + transform.forward * 0.6f + Vector3.up, 0.5f , Vector3.down, out hit, 3))
+        if (Physics.Raycast(transform.position + transform.forward * 0.6f + Vector3.up, Vector3.down, out hit, 3))
         {
             if (hit.collider.tag == "Floor")
             {

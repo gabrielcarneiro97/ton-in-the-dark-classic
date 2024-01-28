@@ -8,6 +8,7 @@ public class ShadowObjectCell : MonoBehaviour
     public GameObject pathBlocker;
     public bool isPathBlocker;
     public bool isWall;
+    int triggerAmount;
     private void Start() {
         if(isPathBlocker)
         {
@@ -36,6 +37,7 @@ public class ShadowObjectCell : MonoBehaviour
     {
         if (other.gameObject.tag == "FireflyLight")
         {
+            triggerAmount++;
             if(isPathBlocker)
             {
                 GetComponent<MeshCollider>().isTrigger = true;
@@ -55,11 +57,12 @@ public class ShadowObjectCell : MonoBehaviour
     {
         if (other.gameObject.tag == "FireflyLight")
         {
-            if(isPathBlocker)
+            triggerAmount--;
+            if(isPathBlocker && triggerAmount == 0)
             {
                 GetComponent<MeshCollider>().isTrigger = false;
             }
-            else 
+            else if(triggerAmount == 0)
             {
                 GetComponent<MeshRenderer>().enabled = false;
                 GetComponent<MeshCollider>().isTrigger = true;

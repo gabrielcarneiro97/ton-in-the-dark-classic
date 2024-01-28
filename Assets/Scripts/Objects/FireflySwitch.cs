@@ -8,21 +8,24 @@ public class FireflySwitch : MonoBehaviour
     public GameObject tip;
     public PlayerGrab playerGrab;
     [SerializeField] public GameObject switchable;
-    public Collider lightCollider;
+    public SphereCollider lightCollider;
 
     public Material withFirefly, withoutFirefly;
     public SwitchCable switchCable;
+    public float radius;
 
 
     void Start()
     {
+        radius = lightCollider.radius;
+        lightCollider.radius = 0;
         switchCable = GetComponentInChildren<SwitchCable>();
         hasFirefly.Subscribe((hasFirefly) =>
         {
             if (hasFirefly) tip.GetComponent<Renderer>().material = withFirefly;
             else tip.GetComponent<Renderer>().material = withoutFirefly;
 
-            lightCollider.enabled = hasFirefly;
+            lightCollider.radius = hasFirefly ? radius : 0;
             switchCable.SetLightActive(hasFirefly);
         });
     }

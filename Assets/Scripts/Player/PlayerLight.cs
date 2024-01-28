@@ -8,22 +8,22 @@ public class PlayerLight : MonoBehaviour
     public PlayerGrab playerGrab;
     public SphereCollider fireflyLightCollider;
     public Transform lanternPos;
+    float radius;
 
     private void Start()
     {
+        radius = fireflyLightCollider.radius;
+        fireflyLightCollider.radius = 0;
         var light = GetComponent<Light>();
-        fireflyLightCollider.enabled = false;
         playerGrab.heldFireflies.Subscribe((heldFireflies) =>
         {
             if (heldFireflies > 0)
             {
                 light.enabled = true;
-                fireflyLightCollider.enabled = true;
             }
             else
             {
                 light.enabled = false;
-                fireflyLightCollider.enabled = false;
             }
             SetLightParams(heldFireflies, light);
         });
@@ -45,5 +45,9 @@ public class PlayerLight : MonoBehaviour
             _ => 9999,
         };
         fireflyLightCollider.radius = 5 + heldFireflies * 5f;
+        if(heldFireflies == 0)
+        {
+            fireflyLightCollider.radius = 0;
+        }
     }
 }
