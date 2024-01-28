@@ -65,13 +65,12 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position + transform.forward * 0.3f + Vector3.up, Vector3.down * 3);
     }
+    public LayerMask layer;
     bool CheckIfCanWalkForward()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + transform.forward * 0.6f + Vector3.up, Vector3.down, out hit, 3))
+        if (Physics.SphereCast(transform.position + transform.forward * 0.6f + Vector3.up, 0.5f , Vector3.down, out hit, 3))
         {
-            if(hit.collider != null)
-                Debug.Log(hit.collider.name);
             if(hit.collider.tag == "Floor")
             {
                 return true;

@@ -30,6 +30,11 @@ public class FireflyCountUI : MonoBehaviour
             StartCoroutine(ShowCount());
         });
         gameObject.SetActive(false);
+    }   
+
+    private void Update() {
+        transform.position = transform.parent.position + new Vector3(1, 5, 0);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
 
