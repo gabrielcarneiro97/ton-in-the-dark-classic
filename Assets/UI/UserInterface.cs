@@ -71,7 +71,7 @@ public class UserInterface : MonoBehaviour
             if (newSelectedButton < 0) selectedButton.value = buttonNames.Count - 1;
             else selectedButton.value = newSelectedButton;
         }
-        else if (Input.GetKeyDown(KeyCode.Return))
+        else if (Input.GetButtonDown("Submit"))
         {
             HandleClick(buttonNames[selectedButton.value])(null);
         }

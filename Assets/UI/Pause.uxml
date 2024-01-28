@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=bc109548ab2ac4bec84f7b3975b6f232&amp;type=3#StyleSheet" />
+    <ui:VisualElement style="flex-grow: 1; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.54);">
+        <ui:Label text="Pause" class="title" style="margin-bottom: 10px;" />
+        <ui:Button text="Resume" name="Resume" class="btn" />
+        <ui:Button text="Restart Level" name="Restart" class="btn" />
+        <ui:Button text="Back to Hub" name="BackToHub" class="btn" />
+    </ui:VisualElement>
+</ui:UXML>
