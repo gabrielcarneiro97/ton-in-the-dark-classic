@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=bc109548ab2ac4bec84f7b3975b6f232&amp;type=3#StyleSheet" />
+    <ui:VisualElement name="WalkTutorial" class="tutorial opacity-0">
+        <ui:VisualElement>
+            <ui:Label text="Use the Arrows or Joystick to move Ton." style="-unity-text-align: middle-left;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="InteractTutorial" class="tutorial opacity-0">
+        <ui:VisualElement>
+            <ui:Label text="Press" style="-unity-text-align: middle-left;" />
+            <ui:Label text="X" class="controller-key controller-blue" style="height: 24px; width: 24px;" />
+            <ui:Label text="/" style="color: rgb(255, 255, 255);" />
+            <ui:Label text="E" class="keyboard-key" style="width: 24px; height: 24px; justify-content: flex-start; -unity-text-align: middle-center;" />
+            <ui:Label text="to Interact with objects." style="-unity-text-align: middle-left;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="OpenMenuTutorial" class="tutorial opacity-0">
+        <ui:VisualElement>
+            <ui:Label text="Press" style="-unity-text-align: middle-left;" />
+            <ui:Label text="#" class="controller-key" style="height: 24px; width: 24px;" />
+            <ui:Label text="/" style="color: rgb(255, 255, 255);" />
+            <ui:Label text="Esc" class="keyboard-key" style="width: 24px; height: 24px; justify-content: flex-start; -unity-text-align: middle-center; font-size: 8px;" />
+            <ui:Label text="to open menu" style="-unity-text-align: middle-left;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

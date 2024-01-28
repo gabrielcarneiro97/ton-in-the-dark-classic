@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7681657435526611748}
   - component: {fileID: 2553381183170378190}
-  - component: {fileID: 6987739169419019416}
+  - component: {fileID: 6874076699497120059}
   m_Layer: 0
   m_Name: PauseHubUI
   m_TagString: Untagged
@@ -50,7 +50,7 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: d304bbc3b59a641fdb9e1b4aa6b7eaf5,
     type: 3}
   m_SortingOrder: 0
---- !u!114 &6987739169419019416
+--- !u!114 &6874076699497120059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

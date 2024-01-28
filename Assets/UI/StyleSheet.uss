@@ -93,3 +93,29 @@ VisualElement {
     border-bottom-color: rgb(0, 0, 0);
     -unity-font-style: bold;
 }
+
+.controller-blue {
+    color: rgb(40, 0, 255);
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.tutorial {
+    color: rgb(255, 255, 255);
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+    align-self: center;
+    position: absolute;
+    bottom: 0;
+    transition-property: opacity;
+    transition-duration: 2s;
+    transition-delay: 0s;
+}
+
+.tutorial > VisualElement {
+    flex-grow: 0;
+    flex-direction: row;
+}

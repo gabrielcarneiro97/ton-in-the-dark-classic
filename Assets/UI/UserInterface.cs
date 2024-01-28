@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -46,7 +47,7 @@ public class UserInterface : MonoBehaviour
             }
         });
 
-        buttons[buttonNames[selectedButton.value]].AddToClassList("selected");
+        if (buttons.Count > 0) buttons[buttonNames[selectedButton.value]].AddToClassList("selected");
         visible.value = defaultVisibility;
     }
 

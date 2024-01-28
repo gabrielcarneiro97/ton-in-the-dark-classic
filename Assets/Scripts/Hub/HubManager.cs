@@ -9,6 +9,8 @@ public class HubManager : MonoBehaviour
 
     public GameObject initialFirefly;
 
+    public TutorialHubController tutorialHubController;
+
     void Start()
     {
         gameManager = GameManager.instance;
@@ -32,5 +34,6 @@ public class HubManager : MonoBehaviour
         }
 
         if (someActive) Destroy(initialFirefly);
+        else tutorialHubController.StartTutorials();
     }
 }
