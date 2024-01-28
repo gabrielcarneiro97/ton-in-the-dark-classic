@@ -11,19 +11,17 @@ public class GameManager : Singleton<GameManager>
 
     public string sceneToLoad = "";
 
+    public int heldFirefliesOnHub = 0;
+
     public void LoadScene()
     {
-        Debug.Log("Loading " + sceneToLoad);
-
         if (sceneToLoad == "") return;
         StartCoroutine(LoadSceneAsync());
     }
 
     IEnumerator LoadSceneAsync()
     {
-        Debug.Log("Starting loading " + sceneToLoad);
         yield return new WaitForSeconds(2f);
-        Debug.Log("Ended waiting " + sceneToLoad);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
         while (!asyncLoad.isDone)
         {
