@@ -9,7 +9,7 @@ public class PlayerGrab : MonoBehaviour
     public List<Collider> enteredColliders = new List<Collider>();
     public Animator animator, lanternAnimator;
     public List<GameObject> grabbedFireflies = new List<GameObject>();
-    
+
 
     private void Update()
     {
@@ -17,10 +17,19 @@ public class PlayerGrab : MonoBehaviour
         {
             Interact();
         }
-        // else if (Input.GetKeyDown(KeyCode.Q) && heldFireflies.value > 0 || Input.GetKeyDown(KeyCode.Joystick1Button3) && heldFireflies.value > 0)
-        // {
-        //     ReleaseFirefly();
-        // }
+        if(isGrabbing)
+        {
+            grabAnimTime += Time.deltaTime;
+            if(grabbedFireflies[0] != null){
+                grabbedFireflies[0].transform.position = Vector3.Lerp(grabbedFireflies[0].transform.position, lanternPos.position, grabAnimTime);
+                grabbedFireflies[0].transform.localScale = Vector3.Lerp(grabbedFireflies[0].transform.localScale, Vector3.zero, grabAnimTime);
+
+            }
+            if(grabAnimTime > 0.5f)
+            {
+                isGrabbing = false;
+            }
+        }
     }
 
     void Interact()
@@ -33,27 +42,61 @@ public class PlayerGrab : MonoBehaviour
                 if (enteredColliders[i].GetComponentInParent<Firefly>())
                 {
                     closestCollider = enteredColliders[i];
+                    StartCoroutine(GrabFirefly(enteredColliders[i].gameObject.transform.parent.gameObject));
                     closestCollider.GetComponent<IInteractable>().Interact();
                     return;
                 }
                 if (Vector3.Distance(transform.position, enteredColliders[i].transform.position) < Vector3.Distance(transform.position, closestCollider.transform.position))
                 {
                     closestCollider = enteredColliders[i];
+                    ReleaseLastFirefly(grabbedFireflies[0]);
                 }
             }
             closestCollider.GetComponent<IInteractable>().Interact();
             animator.SetTrigger("Interact");
             lanternAnimator.SetTrigger("Interact");
         }
+        UpdateFirefliesInLantern();
     }
 
+    public Transform lanternPos;
+    float grabAnimTime = 0f;
+    bool isGrabbing;
     IEnumerator GrabFirefly(GameObject firefly)
     {
-        firefly.GetComponent<Rigidbody>().isKinematic = true;
-        firefly.GetComponent<Collider>().enabled = false;
-        firefly.transform.SetParent(transform);
+        grabAnimTime = 0f;
+        grabbedFireflies.Add(firefly);
+        isGrabbing = true;
+        grabbedFireflies[0].GetComponent<Rigidbody>().isKinematic = true;
+        grabbedFireflies[0].GetComponent<Collider>().enabled = false;
+        grabbedFireflies[0].GetComponent<Firefly>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        grabbedFireflies[0].transform.position = lanternPos.position;
+        isGrabbing = false;
+        UpdateFirefliesInLantern();
+    }
 
-        
+    void ReleaseLastFirefly(GameObject firefly)
+    {
+        grabbedFireflies.Remove(firefly);
+        firefly.GetComponent<Rigidbody>().isKinematic = false;
+        firefly.GetComponent<Collider>().enabled = true;
+        firefly.GetComponent<Firefly>().enabled = true;
+        UpdateFirefliesInLantern();
+    }
+
+    public List<GameObject> FirefliesInLantern = new();
+    public void UpdateFirefliesInLantern()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            FirefliesInLantern[i].SetActive(false);
+
+        }
+        for (int i = 0; i < heldFireflies.value; i++)
+        {
+            FirefliesInLantern[i].SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

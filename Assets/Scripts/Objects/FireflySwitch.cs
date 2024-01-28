@@ -13,6 +13,7 @@ public class FireflySwitch : MonoBehaviour
     public Material withFirefly, withoutFirefly;
     public SwitchCable switchCable;
     public float radius;
+    public GameObject vagalumeVisual;
 
 
     void Start()
@@ -26,6 +27,7 @@ public class FireflySwitch : MonoBehaviour
             else tip.GetComponent<Renderer>().material = withoutFirefly;
 
             lightCollider.radius = hasFirefly ? radius : 0;
+            vagalumeVisual.SetActive(hasFirefly);
             switchCable.SetLightActive(hasFirefly);
         });
     }

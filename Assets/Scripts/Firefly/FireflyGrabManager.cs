@@ -7,11 +7,22 @@ public class FireflyGrabManager : MonoBehaviour, IInteractable
     [SerializeField] GameObject ownerFirefly;
     PlayerGrab playerGrab;
 
+    private void Start() {
+        playerGrab = GameObject.FindWithTag("Player").GetComponent<PlayerGrab>();
+    }
+
     public void Interact()
     {
-        playerGrab = GameObject.FindWithTag("Player").GetComponent<PlayerGrab>();
+        StartCoroutine(GrabFirefly());
+    }
+
+    IEnumerator GrabFirefly()
+    {
+        yield return new WaitForSeconds(0.5f);
         playerGrab.heldFireflies.value++;
+        playerGrab = GameObject.FindWithTag("Player").GetComponent<PlayerGrab>();
         playerGrab.enteredColliders.Remove(gameObject.GetComponent<Collider>());
-        Destroy(ownerFirefly);
+        ownerFirefly.SetActive(false);
+        playerGrab.UpdateFirefliesInLantern();
     }
 }
