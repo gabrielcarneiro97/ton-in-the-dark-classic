@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2122609250961796142}
   - component: {fileID: 1102311738183716027}
   - component: {fileID: 3981660177207136335}
+  - component: {fileID: 7331787271647377629}
   m_Layer: 0
   m_Name: LevelEnd
   m_TagString: LevelEnd
@@ -80,3 +81,22 @@ MonoBehaviour:
   player: {fileID: 0}
   level: 1
   giveFireflyOnEnd: 1
+  finalLevel: 0
+  endUI: {fileID: 7331787271647377629}
+--- !u!114 &7331787271647377629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654294508268704549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: fb831cf74086842c8999c8d996a12ad1, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: b53819b499dcf4a6eb9779d26604d001,
+    type: 3}
+  m_SortingOrder: 0

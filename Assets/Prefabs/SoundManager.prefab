@@ -187,11 +187,15 @@ MonoBehaviour:
   fireflySource: {fileID: 4645029072412755194}
   musicClip: {fileID: 8300000, guid: d333981f44ebd5848be29a560b063b48, type: 3}
   cricketsClip: {fileID: 8300000, guid: 551cb5caf042d784f842d6f826e2029a, type: 3}
-  stepsClip: {fileID: 8300000, guid: e2a9d7760fe3a1241aaa59cc29bb99fc, type: 3}
+  stepsClip: {fileID: 8300000, guid: f6ae70b82ebe73849aeb96a0d6a137b9, type: 3}
   fireflyesClip: {fileID: 8300000, guid: 49deeb636f188234ab6562cc29c4c9ae, type: 3}
   playerInteractClip: {fileID: 8300000, guid: 249bda3cb06f35d4aa15385e85d3e932, type: 3}
   coverClip: {fileID: 8300000, guid: a211cb3ac9cb5a54b872ff86f4901b16, type: 3}
   doorsClip: {fileID: 8300000, guid: 21a32e67b88b8804c8a45e3eaee815d9, type: 3}
+  endLevelClip: {fileID: 8300000, guid: 208132b864525a14ea012bdad7d8a886, type: 3}
+  ambientVolumeModifier: 0.3
+  effectsVolume: 1
+  ambientVolume: 1
 --- !u!1 &1414215716951411666
 GameObject:
   m_ObjectHideFlags: 0
