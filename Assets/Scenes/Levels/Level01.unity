@@ -552,6 +552,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4386943431711285785, guid: a0f0ee7e3a809884b8f3e2ec8f932065,
+        type: 3}
+      propertyPath: maxFireflies
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4676277025561118846, guid: a0f0ee7e3a809884b8f3e2ec8f932065,
         type: 3}
       propertyPath: m_Name
@@ -915,142 +920,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 168720036}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &185907739
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 185907742}
-  - component: {fileID: 185907741}
-  - component: {fileID: 185907740}
-  m_Layer: 0
-  m_Name: TutorialArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &185907740
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185907739}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &185907741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185907739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55305bf33e48a2242af28b561536548a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToShow: Press "X" while close to a firefly to grab it!
-  tutorialText: {fileID: 1695595333}
---- !u!4 &185907742
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185907739}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.34557065, z: -0, w: 0.93839276}
-  m_LocalPosition: {x: -2.84, y: 0, z: 8.13}
-  m_LocalScale: {x: 9.442136, y: 8.380489, z: 15.754556}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -40.433, z: 0}
---- !u!1 &230660674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 230660677}
-  - component: {fileID: 230660676}
-  - component: {fileID: 230660675}
-  m_Layer: 0
-  m_Name: TutorialArea (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &230660675
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230660674}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &230660676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230660674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55305bf33e48a2242af28b561536548a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToShow: Press "X" while close to a switch to retrive the firefly
-  tutorialText: {fileID: 1695595333}
---- !u!4 &230660677
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230660674}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.35422882, z: -0, w: 0.9351588}
-  m_LocalPosition: {x: 13.53, y: 0, z: 22.03}
-  m_LocalScale: {x: 5.709282, y: 8.380489, z: 12.634419}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -41.492, z: 0}
 --- !u!1001 &238460297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2306,17 +2175,17 @@ PrefabInstance:
     - target: {fileID: 834015329465956524, guid: 887fae24909b39f43bcb7aab5eb9768f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1061001
+      value: 1.5128131
       objectReference: {fileID: 0}
     - target: {fileID: 834015329465956524, guid: 887fae24909b39f43bcb7aab5eb9768f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1061
+      value: 1.5128129
       objectReference: {fileID: 0}
     - target: {fileID: 834015329465956524, guid: 887fae24909b39f43bcb7aab5eb9768f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1061001
+      value: 1.5128131
       objectReference: {fileID: 0}
     - target: {fileID: 834015329465956524, guid: 887fae24909b39f43bcb7aab5eb9768f,
         type: 3}
@@ -3484,74 +3353,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
---- !u!1 &710235551
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 710235554}
-  - component: {fileID: 710235553}
-  - component: {fileID: 710235552}
-  m_Layer: 0
-  m_Name: TutorialArea (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &710235552
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710235551}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &710235553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710235551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55305bf33e48a2242af28b561536548a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToShow: Fireflies are attracted to other fireflies' light
-  tutorialText: {fileID: 1695595333}
---- !u!4 &710235554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710235551}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.35422882, z: -0, w: 0.9351588}
-  m_LocalPosition: {x: 15.41, y: 0, z: 36.59}
-  m_LocalScale: {x: 16.201292, y: 8.380489, z: 12.634419}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -41.492, z: 0}
 --- !u!114 &771721552 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7134369763975439375, guid: 4bdd744eb4da64c41bb987319ce765d6,
@@ -4596,74 +4397,6 @@ Transform:
   - {fileID: 303376475}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1051148295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051148298}
-  - component: {fileID: 1051148297}
-  - component: {fileID: 1051148296}
-  m_Layer: 0
-  m_Name: TutorialArea (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1051148296
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051148295}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1051148297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051148295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55305bf33e48a2242af28b561536548a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToShow: Press "X" to release the firefly into the switch!
-  tutorialText: {fileID: 1695595333}
---- !u!4 &1051148298
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051148295}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.4029775, z: -0, w: 0.91520995}
-  m_LocalPosition: {x: 1.7, y: 0, z: 22.54}
-  m_LocalScale: {x: 8.85933, y: 8.677159, z: 12.272231}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -47.529, z: 0}
 --- !u!1001 &1055166776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5411,74 +5144,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
---- !u!1 &1273511598
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1273511601}
-  - component: {fileID: 1273511600}
-  - component: {fileID: 1273511599}
-  m_Layer: 0
-  m_Name: TutorialArea (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1273511599
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273511598}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1273511600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273511598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55305bf33e48a2242af28b561536548a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToShow: Some things need multiple energy sources to power up
-  tutorialText: {fileID: 1695595333}
---- !u!4 &1273511601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273511598}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.37578613, z: -0, w: 0.92670643}
-  m_LocalPosition: {x: 58.9, y: 0, z: 63.7}
-  m_LocalScale: {x: 32.18069, y: 8.380489, z: 31.122366}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -44.146, z: 0}
 --- !u!1001 &1285679415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8560,11 +8225,6 @@ SceneRoots:
   - {fileID: 324008460}
   - {fileID: 571018287}
   - {fileID: 1315647615}
-  - {fileID: 185907742}
-  - {fileID: 1051148298}
-  - {fileID: 710235554}
-  - {fileID: 230660677}
-  - {fileID: 1273511601}
   - {fileID: 700155664}
   - {fileID: 1285679415}
   - {fileID: 1668086494}

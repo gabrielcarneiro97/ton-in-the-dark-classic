@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8045790300572476687}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -193,7 +193,7 @@ Transform:
   - {fileID: 2598855131876243697}
   - {fileID: 551922376597254547}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 47.098, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2204872168910296783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onMaterial: {fileID: 2100000, guid: ddd469c0b559dce46b9a13e2f3d579c1, type: 2}
-  offMaterial: {fileID: 2100000, guid: b85883abaf395a94c8842ddc1bd9f5e2, type: 2}
+  offMaterial: {fileID: 2100000, guid: 68b54bcd4757e174db421f5b50f2656a, type: 2}
   poles:
   - {fileID: 502902104195361202}
   - {fileID: 846586999318009695}
@@ -238,7 +238,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b85883abaf395a94c8842ddc1bd9f5e2, type: 2}
+  - {fileID: 2100000, guid: 68b54bcd4757e174db421f5b50f2656a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,12 +260,12 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0.64, y: 0, z: 1.69}
-  - {x: 0.55, y: 0, z: -0.15}
-  - {x: 1.54, y: 0, z: -0.68}
-  - {x: 2.5, y: 0, z: -0.44}
-  - {x: 3.6, y: 0, z: 0.06}
-  - {x: 4.46, y: 0, z: 0.04}
+  - {x: 5.33, y: 0.05, z: 3.38}
+  - {x: 5.15, y: 0.05, z: -0.3}
+  - {x: 7.13, y: 0.05, z: -1.36}
+  - {x: 9.05, y: 0.05, z: -0.88}
+  - {x: 11.25, y: 0.05, z: 0.12}
+  - {x: 12.97, y: 0.05, z: 0.08}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
