@@ -236,11 +236,6 @@ PrefabInstance:
       propertyPath: pauseUI
       value: 
       objectReference: {fileID: 268400410}
-    - target: {fileID: 7149252830151541230, guid: a0f0ee7e3a809884b8f3e2ec8f932065,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7198203851237617129, guid: a0f0ee7e3a809884b8f3e2ec8f932065,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8614,8 +8609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca9ae6e349553142a4acf505544d018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyToLevelEnd: 0
-  doneFlyToLevelEnd: 0
   fireflyPrefab: {fileID: 9146123303768261230, guid: 3f4fd8611abcdc64285158b31cbad086,
     type: 3}
   level: 0

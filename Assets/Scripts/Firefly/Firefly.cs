@@ -39,21 +39,21 @@ public class Firefly : MonoBehaviour
             FlyToLevelEnd();
             return;
         }
-        if(isInLight)
-        {
-            lightPos = currentLightCollider.transform.position;
-            rb.AddForce((new Vector3(lightPos.x, lightPos.y + 2, lightPos.z) - transform.position).normalized * speed, ForceMode.Acceleration); 
-        }
-        else if (timeOutsideLight > timeOutsideLightToGoBack)
-        {
-            if((transform.position - startPos).magnitude > 0.1f)
-                rb.AddForce((startPos - transform.position).normalized * speed, ForceMode.Acceleration); 
-        }
-        if((lightPos - rb.transform.position).magnitude < 0.1f && currentLightCollider.GetComponentInParent<FireflySwitch>())
-        {
-            currentLightCollider.GetComponentInParent<FireflySwitch>().Interact();
-            Destroy(gameObject);
-        }
+        // if(isInLight)
+        // {
+        //     lightPos = currentLightCollider.transform.position;
+        //     rb.AddForce((new Vector3(lightPos.x, lightPos.y + 2, lightPos.z) - transform.position).normalized * speed, ForceMode.Acceleration); 
+        // }
+        // else if (timeOutsideLight > timeOutsideLightToGoBack)
+        // {
+        //     if((transform.position - startPos).magnitude > 0.1f)
+        //         rb.AddForce((startPos - transform.position).normalized * speed, ForceMode.Acceleration); 
+        // }
+        // if((lightPos - rb.transform.position).magnitude < 0.1f && currentLightCollider.GetComponentInParent<FireflySwitch>())
+        // {
+        //     currentLightCollider.GetComponentInParent<FireflySwitch>().Interact();
+        //     Destroy(gameObject);
+        // }
         FaceMovementDirection();
     }
 
