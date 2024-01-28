@@ -18,7 +18,6 @@ public class UserInterface : MonoBehaviour
         root = uiDocument.rootVisualElement;
         visible.value = root.visible;
         visible.Subscribe(HandleVisibleChange);
-        visible.value = defaultVisibility;
 
         foreach (var buttonName in buttonNames)
         {
@@ -27,8 +26,7 @@ public class UserInterface : MonoBehaviour
             buttons[buttonName] = button;
             button.RegisterCallback((FocusEvent ev) =>
             {
-                foreach (var buttonName in buttonNames)
-                    buttons[buttonName].RemoveFromClassList("selected");
+                selectedButton.value = buttonNames.IndexOf(buttonName);
             });
         }
 
@@ -43,6 +41,8 @@ public class UserInterface : MonoBehaviour
                 buttons[buttonNames[index]].AddToClassList("selected");
             }
         });
+
+        visible.value = defaultVisibility;
     }
 
     virtual public EventCallback<ClickEvent> HandleClick(string buttonName)
@@ -58,6 +58,7 @@ public class UserInterface : MonoBehaviour
 
     public void Update()
     {
+        if (visible.value == false) return;
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             var newSelectedButton = selectedButton.value + 1;
@@ -73,10 +74,6 @@ public class UserInterface : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             HandleClick(buttonNames[selectedButton.value])(null);
-        }
-        else
-        {
-            return;
         }
     }
 
