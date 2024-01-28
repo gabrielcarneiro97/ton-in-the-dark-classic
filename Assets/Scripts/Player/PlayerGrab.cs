@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
+    GameManager gameManager;
     [SerializeField] GameObject fireflyPrefab;
     public Observable<int> heldFireflies = new(0);
     public List<Collider> enteredColliders = new List<Collider>();
     public Animator animator, lanternAnimator;
     public List<GameObject> grabbedFireflies = new List<GameObject>();
 
+    public bool isOnHub = false;
+
+    void Start()
+    {
+        gameManager = GameManager.instance;
+        if (isOnHub)
+        {
+            heldFireflies.value = gameManager.heldFirefliesOnHub;
+            heldFireflies.Subscribe((heldFireflies) =>
+            {
+                gameManager.heldFirefliesOnHub = heldFireflies;
+            });
+        }
+    }
 
     private void Update()
     {
@@ -17,15 +32,16 @@ public class PlayerGrab : MonoBehaviour
         {
             Interact();
         }
-        if(isGrabbing)
+        if (isGrabbing)
         {
             grabAnimTime += Time.deltaTime;
-            if(grabbedFireflies[0] != null){
+            if (grabbedFireflies[0] != null)
+            {
                 lastFirefly.transform.position = Vector3.Lerp(lastFirefly.transform.position, lanternPos.position, grabAnimTime);
                 lastFirefly.transform.localScale = Vector3.Lerp(lastFirefly.transform.localScale, Vector3.zero, grabAnimTime);
 
             }
-            if(grabAnimTime > 0.5f)
+            if (grabAnimTime > 0.5f)
             {
                 isGrabbing = false;
             }
@@ -90,7 +106,7 @@ public class PlayerGrab : MonoBehaviour
     public List<GameObject> FirefliesInLantern = new();
     public void UpdateFirefliesInLantern()
     {
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             FirefliesInLantern[i].SetActive(false);
 

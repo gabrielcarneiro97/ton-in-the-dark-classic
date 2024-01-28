@@ -7,9 +7,9 @@ public class LevelDoor : MonoBehaviour
     public int level = 0;
     public Observable<bool> isOpen = new(false);
 
-    public GameObject doorColliderGameObject;
-
     public HubManager hubManager;
+
+    public Door door;
 
     void Start()
     {
@@ -17,7 +17,8 @@ public class LevelDoor : MonoBehaviour
 
         isOpen.Subscribe((bool isOpen) =>
         {
-            if (isOpen) doorColliderGameObject.SetActive(false);
+            Debug.Log("Level " + level + " is open: " + isOpen);
+            door.Switch(isOpen);
         });
 
         if (level <= gameManager.lastLevelCompleted.value) isOpen.value = true;
@@ -33,7 +34,8 @@ public class LevelDoor : MonoBehaviour
     {
         if (other.gameObject.layer == 3 && isOpen.value)
         {
-            SceneManager.LoadScene("Scenes/Levels/Level0" + level);
+            gameManager.sceneToLoad = "Scenes/Levels/Level0" + level;
+            gameManager.StartLoading();
         }
     }
 }

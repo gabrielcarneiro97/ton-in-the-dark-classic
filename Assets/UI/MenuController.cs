@@ -7,10 +7,12 @@ using UnityEngine.UIElements;
 
 public class MenuController : UserInterface
 {
+    GameManager gameManager;
     public UserInterface creditsUI;
     public UserInterface controlsUI;
     public new void Start()
     {
+        gameManager = GameManager.instance;
         buttonNames.Add("Start");
         buttonNames.Add("Controls");
         buttonNames.Add("Options");
@@ -23,7 +25,12 @@ public class MenuController : UserInterface
     {
         return buttonName switch
         {
-            "Start" => (ClickEvent ev) => SceneManager.LoadScene("Scenes/HubScene"),
+            "Start" => (ClickEvent ev) =>
+            {
+                gameManager.sceneToLoad = "Scenes/HubScene";
+                gameManager.StartLoading();
+            }
+            ,
             "Credits" => (ClickEvent ev) =>
             {
                 creditsUI.visible.value = true;
