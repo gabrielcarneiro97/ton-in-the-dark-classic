@@ -17,6 +17,8 @@ public class TutorialHubController : UserInterface
 
     }
 
+    new void Update() { }
+
     public void StartTutorials()
     {
         StartCoroutine(RunAllTutorials());

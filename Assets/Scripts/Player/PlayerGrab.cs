@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerGrab : MonoBehaviour
 {
     GameManager gameManager;
+    SoundManager soundManager;
     [SerializeField] GameObject fireflyPrefab;
     public Observable<int> heldFireflies = new(0);
     public List<Collider> enteredColliders = new List<Collider>();
@@ -24,6 +25,7 @@ public class PlayerGrab : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
+        soundManager = SoundManager.instance;
         if (isOnHub)
         {
             heldFireflies.value = gameManager.heldFirefliesOnHub;
@@ -83,6 +85,7 @@ public class PlayerGrab : MonoBehaviour
                     ReleaseLastFirefly(grabbedFireflies[0]);
                 }
             }
+            soundManager.PlayPlayerInteract();
             closestCollider.GetComponent<IInteractable>().Interact();
             animator.SetTrigger("Interact");
             lanternAnimator.SetTrigger("Interact");

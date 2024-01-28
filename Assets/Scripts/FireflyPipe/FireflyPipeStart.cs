@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class FireflyPipeStart : MonoBehaviour, IInteractable
 {
+    SoundManager soundManager;
     [SerializeField] FireflyPipe fireflyPipe;
     public PlayerGrab playerGrab;
     public GameObject pivotTampa;
 
+    void Start()
+    {
+        soundManager = SoundManager.instance;
+    }
     public void Interact()
     {
         if (fireflyPipe.hasFirefly.value) return;
@@ -24,6 +29,7 @@ public class FireflyPipeStart : MonoBehaviour, IInteractable
 
     public IEnumerator AnimateClose()
     {
+        soundManager.PlayCover();
         var pivot = pivotTampa.transform;
         var targetRotation = pivot.rotation * Quaternion.Euler(0, 0, 150);
         var duration = 1.5f;
@@ -38,6 +44,7 @@ public class FireflyPipeStart : MonoBehaviour, IInteractable
 
     public IEnumerator AnimateOpen()
     {
+        soundManager.PlayCover();
         var pivot = pivotTampa.transform;
         var targetRotation = pivot.rotation * Quaternion.Euler(0, 0, -150);
         var duration = 1.5f;

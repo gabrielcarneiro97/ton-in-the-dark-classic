@@ -8,10 +8,13 @@ public class SoundManager : Singleton<SoundManager>
 
     public AudioClip musicClip, cricketsClip, stepsClip, fireflyesClip, playerInteractClip, coverClip, doorsClip;
 
+    public float ambientVolumeModifier = .3f;
     public float effectsVolume = 1f, ambientVolume = 1f;
 
     void Start()
     {
+        ChangeAmbientVolume(ambientVolume);
+        ChangeEffectsVolume(effectsVolume);
         PlayMusic();
         PlayCrickets();
         PlayFireflyes();
@@ -65,17 +68,17 @@ public class SoundManager : Singleton<SoundManager>
     public void ChangeEffectsVolume(float value)
     {
         effectsVolume = value;
-        effectsSource.volume = value;
-        playerEffectsSource.volume = value;
-        stepsSource.volume = value;
+        effectsSource.volume = effectsVolume;
+        playerEffectsSource.volume = effectsVolume;
+        stepsSource.volume = effectsVolume;
     }
 
     public void ChangeAmbientVolume(float value)
     {
-        ambientVolume = value;
-        cricketSource.volume = value;
-        fireflySource.volume = value;
-        musicSource.volume = value;
+        ambientVolume = value * ambientVolumeModifier;
+        cricketSource.volume = ambientVolume;
+        fireflySource.volume = ambientVolume;
+        musicSource.volume = ambientVolume;
     }
 
 }

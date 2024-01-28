@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 87817dbf544a1d34d97769377a0b2bcf
+guid: 932b63ae7d103e94db23d9617f62f44b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brilho
-    second: {fileID: 2100000, guid: 650ae3a35e4868e47b909283b836315d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,9 +31,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature_Vagalume|Idle_Vagalume
-      takeName: Armature_Vagalume|Idle_Vagalume
-      internalID: -3623489797136671518
+      name: Armature_Vagalume|Ratatuille_Vagalume
+      takeName: Armature_Vagalume|Ratatuille_Vagalume
+      internalID: 8974429421188610476
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -47,8 +42,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -127,11 +122,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 87817dbf544a1d34d97769377a0b2bcf,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
