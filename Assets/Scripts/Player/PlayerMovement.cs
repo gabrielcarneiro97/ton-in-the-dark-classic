@@ -12,14 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed;
     public Animator animator, lanternAnimator;
 
-    private void Start() 
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update() 
+    private void Update()
     {
-        if(rb.velocity.magnitude > 0.5f)
+        if (rb.velocity.magnitude > 0.5f)
         {
             animator.SetBool("isWalking", true);
             lanternAnimator.SetBool("isWalking", true);
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3.Normalize(movementInput);
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
         DoMovement();
         RotateTowardsMovement();
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     void DoMovement()
     {
-        if(CheckIfCanWalkForward())
+        if (CheckIfCanWalkForward())
         {
             rb.AddForce(movementInput * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
         }
@@ -61,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position + transform.forward * 0.3f + Vector3.up, Vector3.down * 3);
     }
@@ -71,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hit;
         if (Physics.SphereCast(transform.position + transform.forward * 0.6f + Vector3.up, 0.5f , Vector3.down, out hit, 3))
         {
-            if(hit.collider.tag == "Floor")
+            if (hit.collider.tag == "Floor")
             {
                 return true;
             }
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 return false;
             }
-            
+
         }
         return false;
     }

@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelDoor : MonoBehaviour
 {
@@ -8,12 +10,11 @@ public class LevelDoor : MonoBehaviour
 
     public GameObject doorColliderGameObject;
 
-    HubManager hubManager;
+    public HubManager hubManager;
 
     void Start()
     {
         gameManager = GameManager.instance;
-        hubManager = GameObject.Find("HubManager").GetComponent<HubManager>();
 
         isOpen.Subscribe((bool isOpen) =>
         {
@@ -24,7 +25,8 @@ public class LevelDoor : MonoBehaviour
 
         hubManager.activeSwitches.Subscribe((int activeSwitches) =>
         {
-            if (level <= activeSwitches) isOpen.value = true;
+            if (level <= activeSwitches) Debug.Log("Level " + level + " is open");
+            isOpen.value = level <= activeSwitches;
         });
     }
 
@@ -32,7 +34,7 @@ public class LevelDoor : MonoBehaviour
     {
         if (other.gameObject.layer == 3 && isOpen.value)
         {
-            // TODO: load level
+            SceneManager.LoadScene("Scenes/Levels/Level0" + level);
         }
     }
 }
