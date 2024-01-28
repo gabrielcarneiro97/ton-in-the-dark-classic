@@ -5,9 +5,11 @@ using UnityEngine.UIElements;
 
 public class PauseControlller : UserInterface
 {
+    GameManager gameManager;
     // Start is called before the first frame update
     public new void Start()
     {
+        gameManager = GameManager.instance;
         buttonNames.Add("Resume");
         buttonNames.Add("Restart");
         buttonNames.Add("ReturnToHub");
@@ -38,7 +40,8 @@ public class PauseControlller : UserInterface
             "ReturnToHub" => (ClickEvent ev) =>
             {
                 visible.value = false;
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/HubScene");
+                gameManager.sceneToLoad = "Scenes/HubScene";
+                gameManager.StartLoading();
             }
             ,
             _ => (ClickEvent ev) => { }

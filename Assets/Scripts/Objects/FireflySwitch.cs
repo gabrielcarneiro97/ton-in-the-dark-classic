@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FireflySwitch : MonoBehaviour
 {
@@ -15,12 +16,8 @@ public class FireflySwitch : MonoBehaviour
     public float radius;
     public GameObject vagalumeVisual;
 
-
-    void Start()
+    void Awake()
     {
-        radius = lightCollider.radius;
-        lightCollider.radius = 0;
-        switchCable = GetComponentInChildren<SwitchCable>();
         hasFirefly.Subscribe((hasFirefly) =>
         {
             if (hasFirefly) tip.GetComponent<Renderer>().material = withFirefly;
@@ -28,8 +25,15 @@ public class FireflySwitch : MonoBehaviour
 
             lightCollider.radius = hasFirefly ? radius : 0;
             vagalumeVisual.SetActive(hasFirefly);
-            switchCable.SetLightActive(hasFirefly);
+            if (switchCable != null) switchCable.SetLightActive(hasFirefly);
         });
+    }
+
+    void Start()
+    {
+        radius = lightCollider.radius;
+        lightCollider.radius = 0;
+        switchCable = GetComponentInChildren<SwitchCable>();
     }
 
 
