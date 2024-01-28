@@ -21,8 +21,8 @@ public class PlayerGrab : MonoBehaviour
         {
             grabAnimTime += Time.deltaTime;
             if(grabbedFireflies[0] != null){
-                grabbedFireflies[0].transform.position = Vector3.Lerp(grabbedFireflies[0].transform.position, lanternPos.position, grabAnimTime);
-                grabbedFireflies[0].transform.localScale = Vector3.Lerp(grabbedFireflies[0].transform.localScale, Vector3.zero, grabAnimTime);
+                lastFirefly.transform.position = Vector3.Lerp(lastFirefly.transform.position, lanternPos.position, grabAnimTime);
+                lastFirefly.transform.localScale = Vector3.Lerp(lastFirefly.transform.localScale, Vector3.zero, grabAnimTime);
 
             }
             if(grabAnimTime > 0.5f)
@@ -62,8 +62,10 @@ public class PlayerGrab : MonoBehaviour
     public Transform lanternPos;
     float grabAnimTime = 0f;
     bool isGrabbing;
+    GameObject lastFirefly;
     IEnumerator GrabFirefly(GameObject firefly)
     {
+        lastFirefly = firefly;
         grabAnimTime = 0f;
         grabbedFireflies.Add(firefly);
         isGrabbing = true;
