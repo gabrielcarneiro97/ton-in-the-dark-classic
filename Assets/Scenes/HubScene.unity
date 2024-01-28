@@ -5648,6 +5648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
+      propertyPath: isOnHub
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
       propertyPath: playerGrab
       value: 
       objectReference: {fileID: 878772970}
@@ -11439,6 +11444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Positions.Array.data[5].z
       value: -28.928999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
+      propertyPath: isOnHub
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
@@ -31893,6 +31903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
+      propertyPath: isOnHub
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
       propertyPath: playerGrab
       value: 
       objectReference: {fileID: 878772970}
@@ -32169,6 +32184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Positions.Array.data[5].z
       value: -6.903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
+      propertyPath: isOnHub
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
@@ -45860,6 +45880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Positions.Array.data[5].z
       value: 7.1135
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
+      propertyPath: isOnHub
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}

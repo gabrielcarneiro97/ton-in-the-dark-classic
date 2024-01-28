@@ -60,9 +60,9 @@ public class LevelEnd : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (gameManager.lastLevelCompleted.value < level)
+            if (gameManager.lastLevelCompleted < level)
             {
-                gameManager.lastLevelCompleted.value = level;
+                gameManager.lastLevelCompleted = level;
                 if (giveFireflyOnEnd) gameManager.heldFirefliesOnHub += 1;
             }
             flyToLevelEnd.value = true;

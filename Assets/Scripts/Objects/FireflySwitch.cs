@@ -13,6 +13,7 @@ public class FireflySwitch : MonoBehaviour
 
     public Material withFirefly, withoutFirefly;
     public SwitchCable switchCable, switchCable2;
+    public bool isOnHub = false;
     public float radius;
     public GameObject vagalumeVisual;
 
@@ -25,6 +26,10 @@ public class FireflySwitch : MonoBehaviour
 
             lightCollider.radius = hasFirefly ? radius : 0;
             vagalumeVisual.SetActive(hasFirefly);
+            if(isOnHub)
+            {
+                return;
+            }
             if (switchCable != null) switchCable.SetLightActive(hasFirefly);
             if (switchCable2 != null) switchCable2.SetLightActive(hasFirefly);
             if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(hasFirefly);

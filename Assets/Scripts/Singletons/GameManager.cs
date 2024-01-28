@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public Observable<int> lastLevelCompleted = new(0);
+    public int lastLevelCompleted = 0;
     public ObservableCollection<HashSet<string>, string> hubActiveSwitches = new(new HashSet<string>());
 
     public string sceneToLoad = "";

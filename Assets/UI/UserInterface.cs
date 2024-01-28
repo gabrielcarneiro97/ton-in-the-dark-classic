@@ -79,7 +79,8 @@ public class UserInterface : MonoBehaviour
         }
         else if (Input.GetButtonDown(submitButton))
         {
-            HandleClick(buttonNames[selectedButton.value])(null);
+            if(buttonNames.Count > 0)
+                HandleClick(buttonNames[selectedButton.value])(null);
         }
     }
 
