@@ -10,12 +10,15 @@ public class FireflyPipe : MonoBehaviour
     public GameObject firefly;
     public FireflySwitch fireflySwitch;
     public GameObject fireflySwitchInteractableArea;
+    public FireflyPipeStart fireflyPipeStart;
 
     void Start()
     {
+        fireflyPipeStart = GetComponentInChildren<FireflyPipeStart>();
         fireflySwitch.hasFirefly.Subscribe((hasFireflySwitch) =>
         {
             hasFirefly.value = hasFireflySwitch;
+            if(!hasFireflySwitch) StartCoroutine(fireflyPipeStart.AnimateOpen());
         });
     }
 
