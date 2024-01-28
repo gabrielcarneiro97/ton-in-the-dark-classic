@@ -466,7 +466,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
@@ -487,9 +487,6 @@ MonoBehaviour:
   rotationSpeed: 60
   animator: {fileID: 6824339987857056693}
   lanternAnimator: {fileID: 5227925799444129322}
-  layer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &2567305775165108900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +505,7 @@ MonoBehaviour:
   animator: {fileID: 6824339987857056693}
   lanternAnimator: {fileID: 5227925799444129322}
   grabbedFireflies: []
+  isOnHub: 0
   lanternPos: {fileID: 1143729149551748657}
   FirefliesInLantern:
   - {fileID: 7475333460052286755}
