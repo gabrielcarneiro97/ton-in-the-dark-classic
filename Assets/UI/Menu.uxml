@@ -1,11 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=bc109548ab2ac4bec84f7b3975b6f232&amp;type=3#StyleSheet" />
-    <ui:VisualElement style="flex-grow: 1; align-items: center;">
-        <ui:Label text="Ton in the Dark" name="Title" class="title" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Wonderland.otf?fileID=12800000&amp;guid=f69e102f6f9b44b0c8201e6242dea945&amp;type=3#Wonderland&apos;); align-items: auto; -unity-text-align: upper-center; font-size: 40px; -unity-font-style: normal; margin-top: 40px; color: rgb(255, 255, 255);" />
-        <ui:Button text="Start Game" name="Start" class="btn" />
-        <ui:Button text="Controls" name="Controls" class="btn" />
-        <ui:Button text="Options" name="Options" class="btn" />
-        <ui:Button text="Credits" name="Credits" class="btn" />
-        <ui:Button text="Exit" name="Exit" class="btn" />
+    <ui:VisualElement style="flex-grow: 1; align-items: flex-end; margin-right: 0; padding-right: 40px;">
+        <ui:VisualElement style="flex-grow: 1; width: 50%;">
+            <ui:Label text="Ton in the Dark" name="Title" class="title" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Wonderland.otf?fileID=12800000&amp;guid=f69e102f6f9b44b0c8201e6242dea945&amp;type=3#Wonderland&apos;); align-items: auto; -unity-text-align: upper-center; font-size: 40px; -unity-font-style: normal; margin-top: 40px; color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: auto; align-items: center;">
+                <ui:Button text="Start Game" name="Start" class="btn" style="background-color: rgba(103, 217, 103, 0.53);" />
+                <ui:Button text="Controls" name="Controls" class="btn" style="background-color: rgba(103, 217, 112, 0.53);" />
+                <ui:Button text="Options" name="Options" class="btn" style="background-color: rgba(108, 217, 103, 0.53);" />
+                <ui:Button text="Credits" name="Credits" class="btn" style="background-color: rgba(130, 217, 103, 0.53);" />
+                <ui:Button text="Exit" name="Exit" class="btn" style="background-color: rgba(121, 217, 103, 0.53);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
