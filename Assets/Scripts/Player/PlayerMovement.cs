@@ -66,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position + transform.forward * 0.3f + Vector3.up, Vector3.down * 3);
     }
-    public LayerMask layer;
     bool CheckIfCanWalkForward()
     {
         RaycastHit hit;
@@ -74,10 +73,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if (hit.collider.tag == "Floor")
             {
+                Debug.Log("Pode anda");
                 return true;
             }
             else
             {
+                Debug.Log("Nao pode anda");
                 return false;
             }
 
