@@ -27,7 +27,6 @@ public class GameManager : Singleton<GameManager>
         {
             yield return null;
         }
-        Debug.Log("Loading end " + sceneToLoad);
         sceneToLoad = "";
     }
 

@@ -18,6 +18,7 @@ public class PlayerGrab : MonoBehaviour
         gameManager = GameManager.instance;
         if (isOnHub)
         {
+            Debug.Log("isOnHub");
             heldFireflies.value = gameManager.heldFirefliesOnHub;
             heldFireflies.Subscribe((heldFireflies) =>
             {

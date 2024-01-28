@@ -11,23 +11,21 @@ public class LevelDoor : MonoBehaviour
 
     public Door door;
 
+    void Awake()
+    {
+        isOpen.Subscribe((bool isOpen) =>
+        {
+            door.Switch(isOpen);
+        });
+        hubManager.activeSwitches.Subscribe((int activeSwitches) =>
+        {
+            Debug.Log("activeSwitches: " + activeSwitches);
+            isOpen.value = level <= activeSwitches;
+        });
+    }
     void Start()
     {
         gameManager = GameManager.instance;
-
-        isOpen.Subscribe((bool isOpen) =>
-        {
-            Debug.Log("Level " + level + " is open: " + isOpen);
-            door.Switch(isOpen);
-        });
-
-        if (level <= gameManager.lastLevelCompleted.value) isOpen.value = true;
-
-        hubManager.activeSwitches.Subscribe((int activeSwitches) =>
-        {
-            if (level <= activeSwitches) Debug.Log("Level " + level + " is open");
-            isOpen.value = level <= activeSwitches;
-        });
     }
 
     void OnTriggerEnter(Collider other)

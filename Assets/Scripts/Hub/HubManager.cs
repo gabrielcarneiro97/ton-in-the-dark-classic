@@ -25,7 +25,6 @@ public class HubManager : MonoBehaviour, ISwitchable
             }
             fireflySwitch.hasFirefly.Subscribe((bool hasFirefly) =>
             {
-                Debug.Log(fireflySwitch.name + " " + hasFirefly);
                 if (hasFirefly)
                     gameManager.hubActiveSwitches.Add(fireflySwitch.name);
                 else
@@ -33,7 +32,7 @@ public class HubManager : MonoBehaviour, ISwitchable
             });
         }
 
-        Debug.Log("someActive: " + someActive);
+        activeSwitches.value = gameManager.hubActiveSwitches.value.Count;
 
         if (someActive) Destroy(initialFirefly);
     }

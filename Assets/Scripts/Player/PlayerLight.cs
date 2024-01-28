@@ -10,13 +10,12 @@ public class PlayerLight : MonoBehaviour
     public Transform lanternPos;
     float radius;
 
-    private void Start()
+    private void Awake()
     {
-        radius = fireflyLightCollider.radius;
-        fireflyLightCollider.radius = 0;
         var light = GetComponent<Light>();
         playerGrab.heldFireflies.Subscribe((heldFireflies) =>
         {
+            Debug.Log("Held fireflies: " + heldFireflies);
             if (heldFireflies > 0)
             {
                 light.enabled = true;
@@ -27,6 +26,12 @@ public class PlayerLight : MonoBehaviour
             }
             SetLightParams(heldFireflies, light);
         });
+    }
+
+    private void Start()
+    {
+        radius = fireflyLightCollider.radius;
+        fireflyLightCollider.radius = 0;
     }
 
     void SetLightParams(int heldFireflies, Light light)
@@ -45,7 +50,7 @@ public class PlayerLight : MonoBehaviour
             _ => 9999,
         };
         fireflyLightCollider.radius = 5 + heldFireflies * 5f;
-        if(heldFireflies == 0)
+        if (heldFireflies == 0)
         {
             fireflyLightCollider.radius = 0;
         }

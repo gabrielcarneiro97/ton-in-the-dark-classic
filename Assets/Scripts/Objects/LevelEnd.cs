@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelEnd : MonoBehaviour
 {
     GameManager gameManager;
-    public bool flyToLevelEnd;
-    public bool doneFlyToLevelEnd = false;
+    public Observable<bool> flyToLevelEnd = new(false);
+    public Observable<bool> doneFlyToLevelEnd = new(false);
     public GameObject fireflyPrefab;
 
     public int level = 0;
@@ -16,11 +16,18 @@ public class LevelEnd : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
-    }
-    private void Update()
-    {
-        if (flyToLevelEnd && !doneFlyToLevelEnd)
+        doneFlyToLevelEnd.Subscribe((bool done) =>
         {
+            if (!done) return;
+
+            gameManager.sceneToLoad = "Scenes/HubScene";
+            gameManager.StartLoading();
+        });
+
+        flyToLevelEnd.Subscribe((bool fly) =>
+        {
+            if (!fly) return;
+
             foreach (FireflySwitch fireflySwitch in FindObjectsByType<FireflySwitch>(FindObjectsSortMode.None))
             {
                 if (fireflySwitch.hasFirefly.value)
@@ -35,23 +42,26 @@ public class LevelEnd : MonoBehaviour
                 firefly.flyToLevelEnd = true;
                 firefly.GetComponent<Collider>().enabled = false;
             }
-            doneFlyToLevelEnd = true;
-        }
+            StartCoroutine(WaitFly());
+        });
+    }
+
+    IEnumerator WaitFly()
+    {
+        yield return new WaitForSeconds(2);
+        doneFlyToLevelEnd.value = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            flyToLevelEnd = true;
             if (gameManager.lastLevelCompleted.value < level)
             {
                 gameManager.lastLevelCompleted.value = level;
                 if (giveFireflyOnEnd) gameManager.heldFirefliesOnHub += 1;
             }
-
-            gameManager.sceneToLoad = "Scenes/HubScene";
-            gameManager.StartLoading();
+            flyToLevelEnd.value = true;
         }
     }
 }

@@ -16,13 +16,12 @@ public class TutorialText : MonoBehaviour
         {
             text.enabled = true;
             runningTime += Time.deltaTime;
-            if(runningTime < totalRunningTime / 2)
+            if (runningTime < totalRunningTime / 2)
             {
                 text.alpha = Mathf.Lerp(0, 1, runningTime / (totalRunningTime / 2));
             }
             else
             {
-                Debug.Log("Fading out");
                 text.alpha = Mathf.Lerp(1, 0, (runningTime - totalRunningTime / 2) / (totalRunningTime / 2));
             }
         }
@@ -35,7 +34,7 @@ public class TutorialText : MonoBehaviour
 
     public IEnumerator ShowText(string textToShow)
     {
-        if(isRunning)
+        if (isRunning)
         {
             yield return new WaitForSeconds(totalRunningTime - runningTime);
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour , ISwitchable
+public class Door : MonoBehaviour, ISwitchable
 {
     public int energyRequired = 1;
     [SerializeField] GameObject leftDoor;
@@ -10,16 +10,17 @@ public class Door : MonoBehaviour , ISwitchable
     public int energySourceCount;
     public void Switch(bool value)
     {
-        if(value)
+        if (value)
         {
             energySourceCount++;
         }
         else
         {
             energySourceCount--;
+            if (energySourceCount < 0) energySourceCount = 0;
         }
 
-        if(energySourceCount >= energyRequired)
+        if (energySourceCount >= energyRequired)
         {
             StartCoroutine(LeftDoorAnimation(true));
             StartCoroutine(RightDoorAnimation(true));
@@ -37,13 +38,13 @@ public class Door : MonoBehaviour , ISwitchable
         float t = 0;
         Quaternion startRotation = leftDoor.transform.localRotation;
         Quaternion endRotation = value ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(0, 0, 0);
-        while(t < 1)
+        while (t < 1)
         {
             t += Time.deltaTime * 2;
             leftDoor.transform.localRotation = Quaternion.Lerp(startRotation, endRotation, t);
             yield return null;
         }
-        
+
     }
 
     IEnumerator RightDoorAnimation(bool value)
@@ -51,12 +52,12 @@ public class Door : MonoBehaviour , ISwitchable
         float t = 0;
         Quaternion startRotation = rightDoor.transform.localRotation;
         Quaternion endRotation = value ? Quaternion.Euler(0, -90, 0) : Quaternion.Euler(0, 0, 0);
-        while(t < 1)
+        while (t < 1)
         {
             t += Time.deltaTime * 2;
             rightDoor.transform.localRotation = Quaternion.Lerp(startRotation, endRotation, t);
             yield return null;
         }
-        
+
     }
 }
