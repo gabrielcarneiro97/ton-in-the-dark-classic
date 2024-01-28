@@ -22,6 +22,12 @@
                 <ui:Label text="#" class="controller-key" style="color: rgb(255, 255, 255);" />
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between; width: 100%; padding-right: 20px; padding-left: 20px; color: rgb(255, 255, 255);">
+            <ui:Label text="Back" />
+            <ui:VisualElement style="flex-grow: 0; flex-direction: row;">
+                <ui:Label text="B" class="controller-key" style="color: rgb(255, 0, 2);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
         <ui:Button text="Menu" name="BackToMenu" class="btn" />
     </ui:VisualElement>
 </ui:UXML>

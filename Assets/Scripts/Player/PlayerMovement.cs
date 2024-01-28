@@ -69,24 +69,24 @@ public class PlayerMovement : MonoBehaviour
     bool CheckIfCanWalkForward()
     {
         RaycastHit hit;
-        Debug.Log("Raycast");
+        // Debug.Log("Raycast");
         if (Physics.Raycast(transform.position + transform.forward * 0.6f + Vector3.up * 1.2f, Vector3.down, out hit, 20))
         {
-            Debug.Log("Inside Raycast");
+            // Debug.Log("Inside Raycast");
             if (hit.collider.tag == "Floor")
             {
-                Debug.LogWarning("Pode anda");
+                // Debug.LogWarning("Pode anda");
                 return true;
             }
             else
             {
-                Debug.LogWarning("Nao pode anda");
+                // Debug.LogWarning("Nao pode anda");
             }
 
         }
         else
         {
-            Debug.LogWarning("Nao achou alvo");
+            // Debug.LogWarning("Nao achou alvo");
         }
         return false;
     }

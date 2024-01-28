@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HubManager : MonoBehaviour, ISwitchable
+public class HubManager : MonoBehaviour
 {
     GameManager gameManager;
     public List<FireflySwitch> fireflySwitches = new();
@@ -33,8 +33,4 @@ public class HubManager : MonoBehaviour, ISwitchable
 
         if (someActive) Destroy(initialFirefly);
     }
-
-    public void Switch(bool fireflySwitchState)
-    { }
-
 }

@@ -13,6 +13,12 @@ public class UserInterface : MonoBehaviour
     public UIDocument uiDocument;
     public VisualElement root;
 
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+    const string submitButton = "Submit_Mac";
+#elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+    const string submitButton = "Submit_Windows";
+#endif
+
     public void Start()
     {
         root = uiDocument.rootVisualElement;
@@ -30,8 +36,6 @@ public class UserInterface : MonoBehaviour
             });
         }
 
-        buttons[buttonNames[selectedButton.value]].Focus();
-
         selectedButton.Subscribe((int index) =>
         {
             if (index >= 0)
@@ -42,6 +46,7 @@ public class UserInterface : MonoBehaviour
             }
         });
 
+        buttons[buttonNames[selectedButton.value]].AddToClassList("selected");
         visible.value = defaultVisibility;
     }
 
@@ -71,7 +76,7 @@ public class UserInterface : MonoBehaviour
             if (newSelectedButton < 0) selectedButton.value = buttonNames.Count - 1;
             else selectedButton.value = newSelectedButton;
         }
-        else if (Input.GetButtonDown("Submit"))
+        else if (Input.GetButtonDown(submitButton))
         {
             HandleClick(buttonNames[selectedButton.value])(null);
         }

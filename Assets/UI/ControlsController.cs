@@ -6,7 +6,12 @@ using UnityEngine.UIElements;
 public class ControlsController : UserInterface
 {
     public UserInterface menuUI;
-    // Start is called before the first frame update
+
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+    const string backButton = "Back_Mac";
+#elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+    const string backButton = "Back_Windows";
+#endif
     public new void Start()
     {
         buttonNames.Add("BackToMenu");
@@ -26,6 +31,18 @@ public class ControlsController : UserInterface
             _ => (ClickEvent ev) => { }
             ,
         };
+    }
+
+    public new void Update()
+    {
+        if (!visible.value) return;
+        base.Update();
+
+        if (Input.GetButtonDown(backButton))
+        {
+            HandleClick("BackToMenu")(null);
+        }
+
     }
 
 }

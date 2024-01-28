@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class PlayerGrab : MonoBehaviour
 {
     GameManager gameManager;
@@ -11,6 +13,12 @@ public class PlayerGrab : MonoBehaviour
     public Animator animator, lanternAnimator;
     public List<GameObject> grabbedFireflies = new List<GameObject>();
 
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+    const string interactButton = "Interact_Mac";
+#elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+    const string interactButton = "Interact_Windows";
+#endif
+
     public bool isOnHub = false;
 
     void Start()
@@ -18,7 +26,6 @@ public class PlayerGrab : MonoBehaviour
         gameManager = GameManager.instance;
         if (isOnHub)
         {
-            Debug.Log("isOnHub");
             heldFireflies.value = gameManager.heldFirefliesOnHub;
             heldFireflies.Subscribe((heldFireflies) =>
             {
@@ -29,7 +36,14 @@ public class PlayerGrab : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button2))
+        for (int i = 0; i < 20; i++)
+        {
+            if (Input.GetKeyDown("joystick 1 button " + i))
+            {
+                print("joystick 1 button " + i);
+            }
+        }
+        if (Input.GetButtonDown(interactButton))
         {
             Interact();
         }

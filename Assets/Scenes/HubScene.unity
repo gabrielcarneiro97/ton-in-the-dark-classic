@@ -339,7 +339,12 @@ PrefabInstance:
         type: 3}
       propertyPath: switchable
       value: 
-      objectReference: {fileID: 321035946}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
+      propertyPath: switchCable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7297643855783333476, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
       propertyPath: m_Name
@@ -757,7 +762,12 @@ PrefabInstance:
         type: 3}
       propertyPath: switchable
       value: 
-      objectReference: {fileID: 321035946}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
+      propertyPath: switchCable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7297643855783333476, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
       propertyPath: m_Name
@@ -954,6 +964,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4c73446ba253b4cb9a839e987b37c2, type: 3}
+--- !u!114 &554858838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6987739169419019416, guid: f0a05b3a37ba64f7396418aad5590587,
+    type: 3}
+  m_PrefabInstance: {fileID: 6921144587422501641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c33da41dd814910a4ed880974ee1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &587199773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -976,7 +998,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pauseUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 554858838}
     - target: {fileID: 7198203851237617129, guid: a0f0ee7e3a809884b8f3e2ec8f932065,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1446,7 +1468,7 @@ PrefabInstance:
         type: 3}
       propertyPath: switchable
       value: 
-      objectReference: {fileID: 321035946}
+      objectReference: {fileID: 0}
     - target: {fileID: 7297643855783333476, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
       propertyPath: m_Name
@@ -1646,7 +1668,12 @@ PrefabInstance:
         type: 3}
       propertyPath: switchable
       value: 
-      objectReference: {fileID: 321035946}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
+      propertyPath: switchCable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7297643855783333476, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
       propertyPath: m_Name
@@ -2033,7 +2060,12 @@ PrefabInstance:
         type: 3}
       propertyPath: switchable
       value: 
-      objectReference: {fileID: 321035946}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922577669584766748, guid: 4bdd744eb4da64c41bb987319ce765d6,
+        type: 3}
+      propertyPath: switchCable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7297643855783333476, guid: 4bdd744eb4da64c41bb987319ce765d6,
         type: 3}
       propertyPath: m_Name
@@ -2122,6 +2154,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec830c5ea47b074c9df11647dcc34d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &6921144587422501641
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2895875527138220290, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_Name
+      value: PauseHubUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681657435526611748, guid: f0a05b3a37ba64f7396418aad5590587,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0a05b3a37ba64f7396418aad5590587, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2142,3 +2242,4 @@ SceneRoots:
   - {fileID: 2116018741}
   - {fileID: 1404602222}
   - {fileID: 321035948}
+  - {fileID: 6921144587422501641}

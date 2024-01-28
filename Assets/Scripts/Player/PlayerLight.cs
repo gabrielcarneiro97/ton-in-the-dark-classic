@@ -15,7 +15,6 @@ public class PlayerLight : MonoBehaviour
         var light = GetComponent<Light>();
         playerGrab.heldFireflies.Subscribe((heldFireflies) =>
         {
-            Debug.Log("Held fireflies: " + heldFireflies);
             if (heldFireflies > 0)
             {
                 light.enabled = true;

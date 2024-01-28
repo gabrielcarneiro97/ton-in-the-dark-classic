@@ -9,6 +9,8 @@ public class LevelEnd : MonoBehaviour
     public Observable<bool> doneFlyToLevelEnd = new(false);
     public GameObject fireflyPrefab;
 
+    public GameObject player;
+
     public int level = 0;
 
     public bool giveFireflyOnEnd = true;
@@ -27,6 +29,8 @@ public class LevelEnd : MonoBehaviour
         flyToLevelEnd.Subscribe((bool fly) =>
         {
             if (!fly) return;
+
+            player.GetComponent<PlayerMovement>().enabled = false;
 
             foreach (FireflySwitch fireflySwitch in FindObjectsByType<FireflySwitch>(FindObjectsSortMode.None))
             {
