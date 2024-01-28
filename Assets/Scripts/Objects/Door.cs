@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, ISwitchable
 {
+    SoundManager soundManager;
     public int energyRequired = 1;
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
     public int energySourceCount;
+
+    public void Start()
+    {
+        soundManager = SoundManager.instance;
+    }
+
     public void Switch(bool value)
     {
         if (value)
@@ -24,11 +31,13 @@ public class Door : MonoBehaviour, ISwitchable
         {
             StartCoroutine(LeftDoorAnimation(true));
             StartCoroutine(RightDoorAnimation(true));
+            soundManager.PlayDoors();
         }
         else
         {
             StartCoroutine(LeftDoorAnimation(false));
             StartCoroutine(RightDoorAnimation(false));
+            soundManager.PlayDoors();
         }
     }
 
