@@ -5,7 +5,6 @@ using UnityEngine;
 public class HubManager : MonoBehaviour, ISwitchable
 {
     GameManager gameManager;
-    public Observable<int> activeSwitches = new(0);
     public List<FireflySwitch> fireflySwitches = new();
 
     public GameObject initialFirefly;
@@ -32,14 +31,10 @@ public class HubManager : MonoBehaviour, ISwitchable
             });
         }
 
-        activeSwitches.value = gameManager.hubActiveSwitches.value.Count;
-
         if (someActive) Destroy(initialFirefly);
     }
 
     public void Switch(bool fireflySwitchState)
-    {
-        activeSwitches.value += fireflySwitchState ? 1 : -1;
-    }
+    { }
 
 }

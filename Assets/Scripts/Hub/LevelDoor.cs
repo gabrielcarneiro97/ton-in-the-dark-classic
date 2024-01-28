@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,21 +12,19 @@ public class LevelDoor : MonoBehaviour
 
     public Door door;
 
-    void Awake()
+    void Start()
     {
+        gameManager = GameManager.instance;
         isOpen.Subscribe((bool isOpen) =>
         {
             door.Switch(isOpen);
         });
-        hubManager.activeSwitches.Subscribe((int activeSwitches) =>
+
+        isOpen.value = gameManager.hubActiveSwitches.value.Count >= level;
+        gameManager.hubActiveSwitches.Subscribe((HashSet<string> hubActiveSwitches) =>
         {
-            Debug.Log("activeSwitches: " + activeSwitches);
-            isOpen.value = level <= activeSwitches;
+            isOpen.value = hubActiveSwitches.Count >= level;
         });
-    }
-    void Start()
-    {
-        gameManager = GameManager.instance;
     }
 
     void OnTriggerEnter(Collider other)
