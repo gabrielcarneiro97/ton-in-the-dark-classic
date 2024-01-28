@@ -8,11 +8,11 @@ public class FireflySwitch : MonoBehaviour
     public Observable<bool> hasFirefly = new(false);
     public GameObject tip;
     public PlayerGrab playerGrab;
-    [SerializeField] public GameObject switchable;
+    [SerializeField] public GameObject switchable, switchable2;
     public SphereCollider lightCollider;
 
     public Material withFirefly, withoutFirefly;
-    public SwitchCable switchCable;
+    public SwitchCable switchCable, switchCable2;
     public float radius;
     public GameObject vagalumeVisual;
 
@@ -26,6 +26,9 @@ public class FireflySwitch : MonoBehaviour
             lightCollider.radius = hasFirefly ? radius : 0;
             vagalumeVisual.SetActive(hasFirefly);
             if (switchCable != null) switchCable.SetLightActive(hasFirefly);
+            if (switchCable2 != null) switchCable2.SetLightActive(hasFirefly);
+            if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(hasFirefly);
+            if(switchable2 != null) switchable2.GetComponent<ISwitchable>().Switch(hasFirefly);
         });
     }
 
@@ -42,13 +45,11 @@ public class FireflySwitch : MonoBehaviour
         if (hasFirefly.value)
         {
             hasFirefly.value = false;
-            if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(false);
             playerGrab.heldFireflies.value++;
         }
         else if (playerGrab.heldFireflies.value > 0)
         {
             hasFirefly.value = true;
-            if (switchable != null) switchable.GetComponent<ISwitchable>().Switch(true);
             playerGrab.heldFireflies.value--;
         }
     }

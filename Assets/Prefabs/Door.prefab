@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834015329465956524}
   - component: {fileID: 7857472519227407195}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 515069069121122948}
-  - {fileID: 1651147678593797830}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7857472519227407195
@@ -50,59 +49,6 @@ MonoBehaviour:
   leftDoor: {fileID: 5621838294804562547}
   rightDoor: {fileID: 3286214173860976023}
   energySourceCount: 0
---- !u!1 &3310279648794590574
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1651147678593797830}
-  - component: {fileID: 7555766751221205483}
-  m_Layer: 8
-  m_Name: InteractableArea
-  m_TagString: SwitchableArea
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1651147678593797830
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3310279648794590574}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 834015329465956524}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7555766751221205483
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3310279648794590574}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.88
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &49361387465217391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,6 +112,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3554582763782826212, guid: 2f89e9c5f40f3e4429369ece9ad6684d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 288826864595648076, guid: 2f89e9c5f40f3e4429369ece9ad6684d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -175,6 +126,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: placeholder_door
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f89e9c5f40f3e4429369ece9ad6684d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257694120204452088, guid: 2f89e9c5f40f3e4429369ece9ad6684d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4215385454238005105, guid: 2f89e9c5f40f3e4429369ece9ad6684d,
         type: 3}
@@ -364,6 +325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2bfc4b33b7541d488a8e02a264e20a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -452,6 +418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Porta
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2bfc4b33b7541d488a8e02a264e20a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
