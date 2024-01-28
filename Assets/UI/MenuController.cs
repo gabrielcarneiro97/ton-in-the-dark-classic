@@ -10,6 +10,7 @@ public class MenuController : UserInterface
     GameManager gameManager;
     public UserInterface creditsUI;
     public UserInterface controlsUI;
+    public UserInterface optionsUI;
     public new void Start()
     {
         gameManager = GameManager.instance;
@@ -34,6 +35,12 @@ public class MenuController : UserInterface
             "Credits" => (ClickEvent ev) =>
             {
                 creditsUI.visible.value = true;
+                visible.value = false;
+            }
+            ,
+            "Options" => (ClickEvent ev) =>
+            {
+                optionsUI.visible.value = true;
                 visible.value = false;
             }
             ,
